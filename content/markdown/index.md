@@ -1,6 +1,4 @@
-## Hello World
+### Alan Martyn
 
-Things can only get better...
-
-
-# SAUSAGE SAUSAGE SAUSAGE OVERLOAD
+[Machine Learning: Curriculum]()
+[Machine Learning: Learning Log]()
