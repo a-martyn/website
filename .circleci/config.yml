@@ -18,7 +18,7 @@ jobs:
       - run:  
           name: Upload to s3 host
           command: (aws s3 cp content s3://host-website --exclude "*" --include "css/*" --recursive ; 
-                    aws s3 cp content/html s3://bucket-host-website --exclude "*" --include "*html"  --recursive)
+                    aws s3 cp content/html s3://host-website --exclude "*" --include "*html"  --recursive)
 
 
 # *****************
