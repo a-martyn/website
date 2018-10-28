@@ -8,7 +8,7 @@
 *.tfvars
 
 # terraform modules (install with terraform init)
-infra/.terraform
+infrastructure/.terraform
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
