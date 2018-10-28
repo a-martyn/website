@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "bucket_host_website" {
-    bucket = "host-website"
+resource "aws_s3_bucket" "host_website" {
+    bucket = "host-website-${var.env}"
     website {
         index_document = "index.html"
         error_document = "404.html"
@@ -27,7 +27,7 @@ resource "aws_s3_bucket" "bucket_host_website" {
         {
             "Action": ["s3:GetObject"],
             "Effect": "Allow",
-            "Resource": "arn:aws:s3:::host-website/*",
+            "Resource": "arn:aws:s3:::host-website-${var.env}/*",
             "Principal" : "*"
         }
     ]
@@ -37,8 +37,8 @@ EOF
 
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
-    domain_name = "host-website.s3.amazonaws.com"
-    origin_id   = "host-website"
+    domain_name = "host-website-${var.env}.s3.amazonaws.com"
+    origin_id   = "host-website-${var.env}"
   }
 
   enabled             = true
@@ -50,7 +50,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "host-website"
+    target_origin_id = "host-website-${var.env}"
 
     forwarded_values {
       query_string = false
