@@ -1,0 +1,39 @@
+version: 2
+
+# *****************
+# Jobs
+# *****************
+
+jobs:
+
+  # website
+  website:
+    docker: 
+      - image: coxy1989/pandoc-aws
+    steps:
+      - checkout
+      - run: 
+          name: Convert markdown to html
+          command: (cd content ; bash _convert_markdown_to_html.sh)
+      - run:  
+          name: Upload to s3 host
+          command: (aws s3 cp content s3://host-website --exclude "*" --include "css/*" --recursive ; 
+                    aws s3 cp content/html s3://bucket-host-website --exclude "*" --include "*html"  --recursive)
+
+
+# *****************
+# Workflows
+# *****************
+
+workflows:
+  version: 2
+  master:
+    jobs:
+
+      # website
+      - website:
+          filters:
+            branches:
+              only:
+                - master
+
