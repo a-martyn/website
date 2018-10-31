@@ -1,6 +1,6 @@
 # Machine Learning: Curriculum
 
-This is the curriculum I've followed with the goal of understanding machine learning from first principles. I hope that this is useful to others considering exploring machine learning from a background in software development. If you'd like to discuss please dm me on twitter or email.
+This is the curriculum I've followed with the goal of understanding machine learning from first principles whilst also building practical experience applicable to real-world problems. I'd be thrilled if this record of my path is useful to anyone else who is approaching machine learning from a background in software development or otherwise. If you'd like to discuss please dm me on twitter or email.
 
 ## Starting point
 
@@ -14,6 +14,8 @@ This is the curriculum I've followed with the goal of understanding machine lear
 
 A broad high-level introduction to machine learning techniques. A good motivational course but I stopped after week 5 because I felt it was too high-level, instead I wanted to approach the subject bottom-up from mathematical principles.
 
+My code solutions are on [Github here](https://github.com/a-martyn/ml-sabbatical/tree/master/coursework-ng).
+
 - Linear Regression with One Variable
 - Linear Algebra Review
 - Linear Regression with Multiple Variables
@@ -22,9 +24,13 @@ A broad high-level introduction to machine learning techniques. A good motivatio
 - Regularisation
 - Neural Networks
 
+
+
 ## 2. [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning) by David Dye, Samuel J. Cooper, Marc P. Deisenroth (Imperial College / Coursera)
 
 A good introduction to some of the prerequisite mathematics for machine learning covering Linear Algebra, Multivariate Calculus and statistical methods. I feel that probability theory is missing.
+
+My code solutions [Github here](https://github.com/a-martyn/ml-sabbatical/tree/master/coursework-maths4ml).
 
 #### Course 1: Linear Algebra
 *Lecturer: David Dye*
@@ -49,7 +55,7 @@ A good introduction to some of the prerequisite mathematics for machine learning
 
 
 #### Course 2: Multivariate Calculus 
-*Lecturer: Samule J. Cooper*
+*Lecturer: Samuel J. Cooper*
 
 - Gradients and derivatives
 - Multivariate Product Rule & Chain Rule
@@ -84,21 +90,15 @@ A good introduction to some of the prerequisite mathematics for machine learning
 ##### Supporting study:
 
 - Pavel Grinfeld's [inner product course](https://www.youtube.com/playlist?list=PLlXfTHzgMRULZfrNCrrJ7xDcTjGr633mm&disable_polymer=true)
-- [Lagrange multipliers and constrained optimization](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/lagrange-multipliers-and-constrained-optimization/v/constrained-optimization-introduction) – Khan Academy
+- [Lagrange multipliers and constrained optimisation](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/lagrange-multipliers-and-constrained-optimization/v/constrained-optimization-introduction) – Khan Academy
 - [Reduced row echelon form](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/matrices-elimination/v/matrices-reduced-row-echelon-form-1) – Khan Academy
 - [More on Linear Independence](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/linear-independence/v/more-on-linear-independence) - Khan Academy
 - Matplotlib [tutorials](https://matplotlib.org/tutorials/index.html) and a [helpful introduction to matplotlib](http://pbpython.com/effective-matplotlib.html) from Chris Moffit  
 
 
-## 3. [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) (Kaggle)
+## 3. [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) (Kaggle Competition)
 
-Although all courses included in the curriculum so far include practical exercises they are quite heavily guided so I a more free-form applied setting is desired. For this I turned to Kaggle. A welcome opportunity to work with a real dataset which opened my eyes to the importance of data preprocessing, exploration and domain expertise.
-
-- Jupyter notebooks
-- Pandas, Numpy, Seaborn, Matplotlib, Sklearn
-- Feature engineering
-- Cross-validation
-- Data exploration
+Although all courses included in the curriculum so far include practical exercises they are quite heavily guided so I wanted a more free-form applied setting. For this I turned to Kaggle.
 
 See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression). Disclaimer – a lot of naive work here which lead me to pick up *An Introduction to Statistical Learning* next.
 
@@ -108,3 +108,71 @@ See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression). Dis
 
 ## 4. [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani (Textbook)
 
+Time to build a conceptual and applied understanding of supervised learning techniques. For this I chose to work through this textbook cover-to-cover, completing the exercise at the end of each chapter. Conceptual exercises cover the mathematics, applied exercises focus on applying these techniques to datasets provided by the authors. 
+
+The textbook targets the R programming language, but I decided to implement my solutions in Python. This provided the opportunity to become familiar with R, and where python lacked R's functionality I implemented functions myself from scratch. Often this helped build valuable intuition and I'd recommend implementing from scratch whenever you're feeling unsure of some algorithm, even if you don't end up using it – although this can be time consuming.
+
+Links to my notebooks below: 
+
+[Chapter 2 - Statistical Learning: Conceptual](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch2_statistical_learning_conceptual.ipynb)  
+[Chapter 2 - Statistical Learning: Applied](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch2_statistical_learning_applied.ipynb)
+
+
+[Chapter 3 - Linear Regression: Conceptual](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_conceptual.ipynb)  
+[Chapter 3 - Linear Regression: Applied](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_applied.ipynb)
+
+
+[Chapter 4 - Classification: Conceptual](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch4_classification_conceptual.ipynb)  
+[Chapter 4 - Classification: Applied](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch4_classification_applied.ipynb)
+
+
+[Chapter 5 - Resampling Methods: Conceptual](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch5_resampling_methods_conceptual.ipynb)  
+[Chapter 5 - Resampling Methods: Applied](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch5_resampling_methods_applied.ipynb)
+
+
+[Chapter 6 - Linear Model Selection and Regularization: Labs](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_labs.ipynb)  
+[Chapter 6 - Linear Model Selection and Regularization: Conceptual](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_conceptual.ipynb)  
+[Chapter 6 - Linear Model Selection and Regularization: Applied](https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_applied.ipynb)
+
+
+[Chapter 7 - Moving Beyond Linearity: Labs](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch7_moving_beyond_linearity_labs.ipynb)  
+[Chapter 7 - Moving Beyond Linearity: Applied](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch7_moving_beyond_linearity_applied.ipynb)
+
+
+[Chapter 8 - Tree-Based Methods: Labs](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_labs.ipynb)  
+[Chapter 8 - Tree-Based Methods: Conceptual](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_conceptual.ipynb)  
+[Chapter 8 - Tree-Based Methods: Applied](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_applied.ipynb)
+
+
+## Ideas for future study
+
+This is the best [ML bibliography](https://humancompatible.ai/bibliography) I've found from Centre for Human-Compatible Artificial Intelligence. 
+
+Below is an evolving and rough plan for areas of study and projects that I'd like to do dive into next.
+
+#### Probability Theory / Bayesian Statistics
+
+I think we need some introduction to bayesian statistics. Options I've found so far are:
+
+- Curriculum: [Count Bayes](https://www.countbayesie.com/blog/2016/5/1/a-guide-to-bayesian-statistics)
+- Lectures: [Aubrey Clayton's Logic of Science lecture series](https://www.youtube.com/user/elfpower/videos)
+- Book: [*Probability Theory: The Logic of Science* by E.T. Jaynes](https://books.google.co.uk/books/about/Probability_Theory.html?id=tTN4HuUNXjgC&source=kp_book_description&redir_esc=y), Bayesian Statistics, them seminal work.
+- Book: [*Doing Bayesian Data Analysis* by John K. Kruschke](https://www.amazon.com/Doing-Bayesian-Data-Analysis-Second/dp/0124058884/ref=as_li_ss_tl?ie=UTF8&qid=1462141686&sr=8-1&keywords=doing+bayesian+data+analysis&linkCode=sl1&tag=counbaye09-20&linkId=d4059e53b7b13b9daa785421e5bf99a5), practical Bayesian Data Analysis
+
+
+#### Game Theory
+
+- Course: [Game Theory (Coursera)](https://www.coursera.org/learn/game-theory-1)
+- Project: submit at contribution to the [Axlerod project](https://github.com/Axelrod-Python/Axelrod)
+
+#### Reinforcement learning
+
+- Lectures: [Introduction to Reinforcement Learning by David Silver](https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ)
+- Book: [Reinforcement Learning: An Introduction (2nd Edition)](https://www.amazon.co.uk/Reinforcement-Learning-Introduction-Richard-Sutton/dp/0262039249)
+- Project: Try and solve some arcade game, or some other simulated problem
+
+
+#### Deep learning
+
+- Course: [Andrew Ng's Deep Learning Specialisation](https://www.coursera.org/specializations/deep-learning)
+- Book: [*Deep Learning* by Ian Goodfellow and Yoshua Bengio and Aaron Courville](https://www.deeplearningbook.org/)
