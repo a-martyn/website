@@ -10,7 +10,9 @@ This is the curriculum I've followed with the goal of understanding machine lear
 - lots of messing around with Arduino microprocessors
 - A-level and undergraduate mathematics in need of refresh
 
-## 1. [Machine Learning](https://www.coursera.org/learn/machine-learning) by Andrew Ng (Stanford / Coursera)
+## 1. [Machine Learning](https://www.coursera.org/learn/machine-learning) by Andrew Ng
+#### (Stanford / Coursera)
+
 
 A broad high-level introduction to machine learning techniques. A good motivational course but I stopped after week 5 because I felt it was too high-level, instead I wanted to approach the subject bottom-up from mathematical principles.
 
@@ -26,7 +28,9 @@ My code solutions are on [Github here](https://github.com/a-martyn/ml-sabbatical
 
 
 
-## 2. [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning) by David Dye, Samuel J. Cooper, Marc P. Deisenroth (Imperial College / Coursera)
+## 2. [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning)
+
+#### (Imperial College / Coursera)
 
 A good introduction to some of the prerequisite mathematics for machine learning covering Linear Algebra, Multivariate Calculus and statistical methods. I feel that probability theory is missing.
 
@@ -96,7 +100,7 @@ My code solutions [Github here](https://github.com/a-martyn/ml-sabbatical/tree/m
 - Matplotlib [tutorials](https://matplotlib.org/tutorials/index.html) and a [helpful introduction to matplotlib](http://pbpython.com/effective-matplotlib.html) from Chris Moffit  
 
 
-## 3. [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) (Kaggle Competition)
+## 3. [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques): Kaggle
 
 Although all courses included in the curriculum so far include practical exercises they are quite heavily guided so I wanted a more free-form applied setting. For this I turned to Kaggle.
 
@@ -106,7 +110,9 @@ See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression). Dis
 
 - [Python Data ScienceHandbook](https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html) by Jake VanderPlas
 
-## 4. [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani (Textbook)
+## 4. [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/)
+
+#### Trevor Hastie and Robert Tibshirani (Textbook)
 
 Time to build a conceptual and applied understanding of supervised learning techniques. For this I chose to work through this textbook cover-to-cover, completing the exercise at the end of each chapter. Conceptual exercises cover the mathematics, applied exercises focus on applying these techniques to datasets provided by the authors. 
 
