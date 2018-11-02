@@ -36,7 +36,7 @@ My code solutions are on [Github here](https://github.com/a-martyn/ml-sabbatical
 
 A good introduction to some of the prerequisite mathematics for machine learning covering Linear Algebra, Multivariate Calculus and statistical methods. I feel that probability theory is missing.
 
-My code solutions [Github here](https://github.com/a-martyn/ml-sabbatical/tree/master/coursework-maths4ml).
+See my code on [Github here](https://github.com/a-martyn/ml-sabbatical/tree/master/coursework-maths4ml).
 
 ##### Course 1: Linear Algebra
 *Lecturer: David Dye*
@@ -116,9 +116,12 @@ See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression). Dis
 
 *Trevor Hastie and Robert Tibshirani (Textbook)*
 
-Time to build a conceptual and applied understanding of supervised learning techniques. For this I chose to work through this textbook cover-to-cover, completing the exercise at the end of each chapter. Conceptual exercises cover the mathematics, applied exercises focus on applying these techniques to datasets provided by the authors. 
+<IMG src='http://www-bcf.usc.edu/%7Egareth/ISL/ISL%20Cover%202.jpg' height=20% width=20%> <P>
 
-The textbook targets the R programming language, but I decided to implement my solutions in Python. This provided the opportunity to become familiar with R, and where python lacked R's functionality I implemented functions myself from scratch. Often this helped build valuable intuition and I'd recommend implementing from scratch whenever you're feeling unsure of some algorithm, even if you don't end up using it – although this can be time consuming.
+To build a conceptual and applied understanding of supervised learning techniques I chose to work through An Introduction to Statistical Learning cover-to-cover, completing the exercise at the end of each chapter. Conceptual exercises cover the mathematics, whilst applied exercises focus on prediction and inference tasks using various datasets. 
+
+The textbook targets the R programming language, but I decided to implement my solutions in Python. Where Python lacked R's functionality I implemented from scratch – I found this to be a useful means to build intution.
+
 
 Links to my notebooks below: 
 
@@ -152,7 +155,10 @@ Links to my notebooks below:
 [Chapter 8 - Tree-Based Methods: Applied](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_applied.ipynb)
 
 
-### Ideas for future study
+The source code for these notebooks is available on [Github here](https://github.com/a-martyn/ISL-python).
+
+
+### [Ideas for future study](#ideas-for-future-study)
 
 This is the best [ML bibliography](https://humancompatible.ai/bibliography) I've found from Centre for Human-Compatible Artificial Intelligence. 
 
