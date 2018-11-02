@@ -304,6 +304,61 @@ div.content {
 } 
 
 
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  .sidebar {
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+  div.content {
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+  }
+  .sidebar a {
+    text-align: left;
+    float: none;
+  }
+  div.content {margin-left: 0;}
+}
+
+
+/* ----------- iPhone 6+, 7+ and 8+  and X ----------- */
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+  .sidebar {
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+  div.content {
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+  }
+  .sidebar a {
+    text-align: left;
+    float: none;
+  }
+  div.content {margin-left: 0;}
+}
+
+
 body{
     background-color:#fff;
     margin: auto;
