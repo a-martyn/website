@@ -2,7 +2,7 @@
 
 ## Machine Learning: Log
 
-*Day-by-day notes as I study machine learning.*
+Day-by-day notes as I study machine learning.
 
 ### 66. 2018-10-23
 
