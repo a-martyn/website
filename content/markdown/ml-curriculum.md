@@ -160,8 +160,6 @@ The source code for these notebooks is available on [Github here](https://github
 
 ### [Ideas for future study](#ideas-for-future-study)
 
-This is the best [ML bibliography](https://humancompatible.ai/bibliography) I've found from Centre for Human-Compatible Artificial Intelligence. 
-
 Below is an evolving and rough plan for areas of study and projects that I'd like to do dive into next.
 
 ##### Probability Theory / Bayesian Statistics
@@ -190,5 +188,9 @@ I think we need some introduction to bayesian statistics. Options I've found so 
 
 - Course: [Andrew Ng's Deep Learning Specialisation](https://www.coursera.org/specializations/deep-learning)
 - Book: [*Deep Learning* by Ian Goodfellow and Yoshua Bengio and Aaron Courville](https://www.deeplearningbook.org/)
+
+##### References
+
+- This is the best [ML bibliography](https://humancompatible.ai/bibliography) I've found from Centre for Human-Compatible Artificial Intelligence. 
 
 </div>
