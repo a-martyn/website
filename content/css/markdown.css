@@ -239,10 +239,77 @@
 .highlight{
     background-color:#f8f8f8
 }
+
+ /* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 40px 0px 40px 0px;
+  width: 260px;
+  background-color: #fff;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  font:16px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #fff;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 320px;
+  max-width: 600px;
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 40px;
+  background-color: #fff;
+}
+
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+
+@media screen and (max-width: 900px) {
+  .sidebar {
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+  div.content {
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+
+/* On screens that are less than 900px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 900px) {
+  .sidebar a {
+    text-align: left;
+    float: none;
+  }
+} 
+
+
 body{
     background-color:#fff;
-    padding:50px;
-    font:14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: auto;
+    height: auto;
+    padding: 0px;
+    font:16px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color:#727272;
     font-weight:400
 }
@@ -400,64 +467,6 @@ footer{
     bottom:50px;
     -webkit-font-smoothing:subpixel-antialiased
 }
-@media print, screen and (max-width: 960px){
-    div.wrapper{
-        width:auto;
-        margin:0
-    }
-    header,section,footer{
-        float:none;
-        position:static;
-        width:auto
-    }
-    header{
-        padding-right:320px
-    }
-    section{
-        border:1px solid #e5e5e5;
-        border-width:1px 0;
-        padding:20px 0;
-        margin:0 0 20px
-    }
-    header a small{
-        display:inline
-    }
-    header ul{
-        position:absolute;
-        right:50px;
-        top:52px
-    }
-}
-@media print, screen and (max-width: 720px){
-    body{
-        word-wrap:break-word
-    }
-    header{
-        padding:0
-    }
-    header ul,header p.view{
-        position:static
-    }
-    pre,code{
-        word-wrap:normal
-    }
-}
-@media print, screen and (max-width: 480px){
-    body{
-        padding:15px
-    }
-    header ul{
-        width:99%
-    }
-    header li,header ul li+li+li{
-        width:33%
-    }
-}
-@media print{
-    body{
-        padding:0.4in;
-        font-size:12pt;
-        color:#444
-    }
-}
+
+
  

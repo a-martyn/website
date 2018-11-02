@@ -1,8 +1,10 @@
-# Machine Learning: Curriculum
+<div class="content">
+
+## Machine Learning: Curriculum
 
 This is the curriculum I've followed with the goal of understanding machine learning from first principles whilst also building practical experience applicable to real-world problems. I'd be thrilled if this record of my path is useful to anyone else who is approaching machine learning from a background in software development or otherwise. If you'd like to discuss please dm me on twitter or email.
 
-## Starting point
+### Starting point
 
 - Undergraduate degree in Audio Engineering covering audio signal processing, compression techniques, auditory perception, mathematics and electrical engineering
 - 6 years experience working in software development and prototyping for iOS and web
@@ -10,8 +12,8 @@ This is the curriculum I've followed with the goal of understanding machine lear
 - lots of messing around with Arduino microprocessors
 - A-level and undergraduate mathematics in need of refresh
 
-## 1. [Machine Learning](https://www.coursera.org/learn/machine-learning) by Andrew Ng
-#### (Stanford / Coursera)
+### 1. [Machine Learning](https://www.coursera.org/learn/machine-learning) by Andrew Ng
+*(Stanford / Coursera)*
 
 
 A broad high-level introduction to machine learning techniques. A good motivational course but I stopped after week 5 because I felt it was too high-level, instead I wanted to approach the subject bottom-up from mathematical principles.
@@ -28,15 +30,15 @@ My code solutions are on [Github here](https://github.com/a-martyn/ml-sabbatical
 
 
 
-## 2. [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning)
+### 2. [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning)
 
-#### (Imperial College / Coursera)
+*(Imperial College / Coursera)*
 
 A good introduction to some of the prerequisite mathematics for machine learning covering Linear Algebra, Multivariate Calculus and statistical methods. I feel that probability theory is missing.
 
 My code solutions [Github here](https://github.com/a-martyn/ml-sabbatical/tree/master/coursework-maths4ml).
 
-#### Course 1: Linear Algebra
+##### Course 1: Linear Algebra
 *Lecturer: David Dye*
 
 - The relationship between machine learning, linear algebra, and vectors and matrices
@@ -58,7 +60,7 @@ My code solutions [Github here](https://github.com/a-martyn/ml-sabbatical/tree/m
 - Eigenvector application: implementation of Page Rank algorithm
 
 
-#### Course 2: Multivariate Calculus 
+##### Course 2: Multivariate Calculus 
 *Lecturer: Samuel J. Cooper*
 
 - Gradients and derivatives
@@ -78,7 +80,7 @@ My code solutions [Github here](https://github.com/a-martyn/ml-sabbatical/tree/m
 - General non-linear least squares
 
 
-#### Course 3: Principle Components Analysis
+##### Course 3: Principle Components Analysis
 *Lecturer: Marc P. Deisenroth*
 
 - Mean of datasets
@@ -100,7 +102,7 @@ My code solutions [Github here](https://github.com/a-martyn/ml-sabbatical/tree/m
 - Matplotlib [tutorials](https://matplotlib.org/tutorials/index.html) and a [helpful introduction to matplotlib](http://pbpython.com/effective-matplotlib.html) from Chris Moffit  
 
 
-## 3. [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques): Kaggle
+### 3. [House Prices](https://www.kaggle.com/c/house-prices-advanced-regression-techniques): Kaggle
 
 Although all courses included in the curriculum so far include practical exercises they are quite heavily guided so I wanted a more free-form applied setting. For this I turned to Kaggle.
 
@@ -110,9 +112,9 @@ See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression). Dis
 
 - [Python Data ScienceHandbook](https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html) by Jake VanderPlas
 
-## 4. [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/)
+### 4. [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/)
 
-#### Trevor Hastie and Robert Tibshirani (Textbook)
+*Trevor Hastie and Robert Tibshirani (Textbook)*
 
 Time to build a conceptual and applied understanding of supervised learning techniques. For this I chose to work through this textbook cover-to-cover, completing the exercise at the end of each chapter. Conceptual exercises cover the mathematics, applied exercises focus on applying these techniques to datasets provided by the authors. 
 
@@ -150,13 +152,13 @@ Links to my notebooks below:
 [Chapter 8 - Tree-Based Methods: Applied](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_applied.ipynb)
 
 
-## Ideas for future study
+### Ideas for future study
 
 This is the best [ML bibliography](https://humancompatible.ai/bibliography) I've found from Centre for Human-Compatible Artificial Intelligence. 
 
 Below is an evolving and rough plan for areas of study and projects that I'd like to do dive into next.
 
-#### Probability Theory / Bayesian Statistics
+##### Probability Theory / Bayesian Statistics
 
 I think we need some introduction to bayesian statistics. Options I've found so far are:
 
@@ -166,19 +168,21 @@ I think we need some introduction to bayesian statistics. Options I've found so 
 - Book: [*Doing Bayesian Data Analysis* by John K. Kruschke](https://www.amazon.com/Doing-Bayesian-Data-Analysis-Second/dp/0124058884/ref=as_li_ss_tl?ie=UTF8&qid=1462141686&sr=8-1&keywords=doing+bayesian+data+analysis&linkCode=sl1&tag=counbaye09-20&linkId=d4059e53b7b13b9daa785421e5bf99a5), practical Bayesian Data Analysis
 
 
-#### Game Theory
+##### Game Theory
 
 - Course: [Game Theory (Coursera)](https://www.coursera.org/learn/game-theory-1)
 - Project: submit at contribution to the [Axlerod project](https://github.com/Axelrod-Python/Axelrod)
 
-#### Reinforcement learning
+##### Reinforcement learning
 
 - Lectures: [Introduction to Reinforcement Learning by David Silver](https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ)
 - Book: [Reinforcement Learning: An Introduction (2nd Edition)](https://www.amazon.co.uk/Reinforcement-Learning-Introduction-Richard-Sutton/dp/0262039249)
 - Project: Try and solve some arcade game, or some other simulated problem
 
 
-#### Deep learning
+##### Deep learning
 
 - Course: [Andrew Ng's Deep Learning Specialisation](https://www.coursera.org/specializations/deep-learning)
 - Book: [*Deep Learning* by Ian Goodfellow and Yoshua Bengio and Aaron Courville](https://www.deeplearningbook.org/)
+
+</div>

@@ -1,45 +1,47 @@
-# Machine Learning: Learning Log
+<div class="content">
 
-Day-by-day notes as I try to learn machine learning from first principles.
+## Machine Learning: Log
 
-## #66: 2018-10-23
+*Day-by-day notes as I study machine learning.*
+
+### 66. 2018-10-23
 
 Introduction to Statistical Learning: ch8: **Tree-Based Methods** Applied:
 
 - Comparison of tree based methods with KNN, regression and the lasso.
-- [Notebook: ch8_tree_based_methods_applied.ipynbb](./coursework-ISL/ch8_tree_based_methods_applied.ipynbb)
+- [Notebook: ch8_tree_based_methods_applied.ipynbb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_applied.ipynb)
 
-## #65: 2018-10-22
+### 65. 2018-10-22
 
 Introduction to Statistical Learning: ch8: **Tree-Based Methods** Applied:
 
 - Application of tree based methods – including Tree Pruning, Bagging, Random Forest, Boosting – to various datasets
-- [Notebook: ch8_tree_based_methods_applied.ipynbb](./coursework-ISL/ch8_tree_based_methods_applied.ipynbb)
+- [Notebook: ch8_tree_based_methods_applied.ipynbb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_applied.ipynb)
 
-## #64: 2018-10-19
+### 64. 2018-10-19
 
 Introduction to Statistical Learning: ch8: **Tree-Based Methods** Labs:
 
 - Review of tree based methods including Tree Pruning, Bagging, Random Forest, Boosting
-- [Notebook: ch8_tree_based_methods_labs.ipynb](./coursework-ISL/ch8_tree_based_methods_labs.ipynb)
+- [Notebook: ch8_tree_based_methods_labs.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_labs.ipynb)
 
-## #63: 2018-10-18
+### 63. 2018-10-18
 
 Introduction to Statistical Learning: ch7: **Moving Beyond Linearity** Applied:
 
-- [Notebook: ch7_moving_beyond_linearity_applied.ipynb](./coursework-ISL/ch7_moving_beyond_linearity_applied.ipynb)
+- [Notebook: ch7_moving_beyond_linearity_applied.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch7_moving_beyond_linearity_applied.ipynb)
 
 
-## #62: 2018-10-17
+### 62. 2018-10-17
 
 Introduction to Statistical Learning: ch7: **Moving Beyond Linearity** Applied:
 
 - GAMs
 - implemented backfitting algorithm from scratch
 - comparison of backfitting and multivariate OLS in simulated setting
-- [Notebook: ch7_moving_beyond_linearity_applied.ipynb](./coursework-ISL/ch7_moving_beyond_linearity_applied.ipynb)
+- [Notebook: ch7_moving_beyond_linearity_applied.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch7_moving_beyond_linearity_applied.ipynb)
 
-## #61: 2018-10-16
+### 61. 2018-10-16
 
 Introduction to Statistical Learning: ch7: **Moving Beyond Linearity** Applied:
 
@@ -49,9 +51,9 @@ Introduction to Statistical Learning: ch7: **Moving Beyond Linearity** Applied:
 - step function regression
 - cubic spline regression
 - natural spline regression
-- [Notebook: ch7_moving_beyond_linearity_applied.ipynb](./coursework-ISL/ch7_moving_beyond_linearity_applied.ipynb)
+- [Notebook: ch7_moving_beyond_linearity_applied.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch7_moving_beyond_linearity_applied.ipynb)
 
-## #60: 2018-10-15
+### 60. 2018-10-15
 
 Introduction to Statistical Learning: ch7: **Moving Beyond Linearity** Lab:
 
@@ -61,18 +63,18 @@ Introduction to Statistical Learning: ch7: **Moving Beyond Linearity** Lab:
 - bootstrapped confidence intervals
 - comparison of splines in univariate setting
 - comparison of GAM configurations with ANOVA
-- [Notebook: ch7_moving_beyond_linearity_labs.ipynb](./coursework-ISL/ch7_moving_beyond_linearity_labs.ipynb)
+- [Notebook: ch7_moving_beyond_linearity_labs.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch7_moving_beyond_linearity_labs.ipynb)
 
 
-## #59: 2018-10-12
+### 59. 2018-10-12
 
 Introduction to Statistical Learning: ch6: **Linear Model Selection and Regularization** Applied:
 
 - Analysis to compare linear models
 - Ch7 Reading
-- [Notebook: ch6_linear_model_selection_and_regularisation_applied.ipynb](./coursework-ISL/ch6_linear_model_selection_and_regularisation_applied.ipynb)
+- [Notebook: ch6_linear_model_selection_and_regularisation_applied.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_applied.ipynb)
 
-## #58: 2018-10-11
+### 58. 2018-10-11
 
 Introduction to Statistical Learning: ch6: **Linear Model Selection and Regularization** Applied:
 
@@ -82,9 +84,9 @@ Introduction to Statistical Learning: ch6: **Linear Model Selection and Regulari
   - backward stepwise
   - PCR
   - PLS
-- [Notebook: ch6_linear_model_selection_and_regularisation_applied.ipynb](./coursework-ISL/ch6_linear_model_selection_and_regularisation_applied.ipynb)
+- [Notebook: ch6_linear_model_selection_and_regularisation_applied.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_applied.ipynb)
 
-## #57: 2018-10-11
+### 57. 2018-10-11
 
 Introduction to Statistical Learning: ch6: **Linear Model Selection and Regularization** Applied:
 
@@ -94,10 +96,10 @@ Introduction to Statistical Learning: ch6: **Linear Model Selection and Regulari
     - backward stepwise
     - PCR
     - PLS
-- [Notebook: ch6_linear_model_selection_and_regularisation_applied.ipynb](./coursework-ISL/ch6_linear_model_selection_and_regularisation_applied.ipynb)
+- [Notebook: ch6_linear_model_selection_and_regularisation_applied.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_applied.ipynb)
 
 
-## #56: 2018-10-10
+### 56. 2018-10-10
 
 Completed Introduction to Statistical Learning: ch6: **Linear Model Selection and Regularization** Labs:
 
@@ -105,10 +107,10 @@ Completed Introduction to Statistical Learning: ch6: **Linear Model Selection an
 - implemented principle components regression
 - implemented partial least squares
 - comparison of principle components regression partial least squares in predicting salaries of baseball players
-- [Notebook: ch6_linear_model_selection_and_regularisation_labs.ipynb](./coursework-ISL/ch6_linear_model_selection_and_regularisation_labs.ipynb)
+- [Notebook: ch6_linear_model_selection_and_regularisation_labs.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_labs.ipynb)
 
 
-## #55: 2018-10-09
+### 55. 2018-10-09
 
 Working through Introduction to Statistical Learning: ch6: **Linear Model Selection and Regularization** Labs:
 
@@ -117,9 +119,9 @@ Working through Introduction to Statistical Learning: ch6: **Linear Model Select
 - implemented k-fold cross validation from scratch
 - completed Lab 1
 - Lab 2: comparison of ridge regression and the lasso with k-fold cross validation
-- [Notebook: ch6_linear_model_selection_and_regularisation_labs.ipynb](./coursework-ISL/ch6_linear_model_selection_and_regularisation_labs.ipynb)
+- [Notebook: ch6_linear_model_selection_and_regularisation_labs.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_labs.ipynb)
 
-## #54: 2018-10-08
+### 54. 2018-10-08
 
 Read an Introduction to Statistical Learning: ch7: **Moving Beyond Linearity**. 
 
@@ -127,9 +129,9 @@ Working through chapter 6 Lab 1: Subset Selection Methods:
 
 - implemented best subset selection from scratch
 - implemented forward stepwise selection from scratch
-- [Notebook: ch6_linear_model_selection_and_regularisation_labs.ipynb](./coursework-ISL/ch6_linear_model_selection_and_regularisation_labs.ipynb)
+- [Notebook: ch6_linear_model_selection_and_regularisation_labs.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_labs.ipynb)
 
-## #53: 2018-09-28
+### 53. 2018-09-28
 
 ISL considers ridge regression and the Lasso from both the frequentist and the bayesian perspectives. Although ISL has introduced bayesian statistics and some probability theory, there is clearly much more to this subject.
 
@@ -145,7 +147,7 @@ Researched: what are the best resources for learning probability theory in more 
     - Recommendation: https://www.reddit.com/r/statistics/comments/85hxgt/bayesian_statistics_courserecommendation/
 
 
-## #52: 2018-09-27
+### 52. 2018-09-27
 
 An Introduction to Statistical Learning: ch6: **Linear Model Selection and Regularization**. 
 
@@ -154,34 +156,34 @@ Completed conceptual exercises:
 - best subset, forward stepwise, backward stepwise selection
 - the lasso and ridge regression
 - coefficient penalties
-- [Notebook: ch6_linear_model_selection_and_regularisation_conceptual.ipynb](./coursework-ISL/ch6_linear_model_selection_and_regularisation_conceptual.ipynb)
+- [Notebook: ch6_linear_model_selection_and_regularisation_conceptual.ipynb](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_conceptual.ipynb)
 
-## #51: 2018-09-26
+### 51. 2018-09-26
 
 Revision day. Met with study partner and reviewed our solutions to all exercises from chapters 3-5 of An Introduction to Statistical Learning. Discussed and compared intuitions.
 
 
-## #50: 2018-09-25
+### 50. 2018-09-25
 
 Read ISL ch5: Linear Model Selection and Regularization. 
 
 
-## #49: 2018-09-20
+### 49. 2018-09-20
 
 An Introduction to Statistical Learning: ch5: **Resampling Methods**. 
 
-Working through applied exercises:[My notebook](./coursework-ISL/ch5_resampling_methods_applied.ipynb)
+Working through applied exercises:[My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch5_resampling_methods_applied.ipynb)
 
 - implemented LOOCV from scratch
 - dataset simulation
 - compared bias variance trade-offs of validation approaches
 - bootstrap advanced applications
 
-## #48: 2018-09-19
+### 48. 2018-09-19
 
 An Introduction to Statistical Learning: ch5: **Resampling Methods**. 
 
-Working through applied exercises: [My notebook](./coursework-ISL/ch5_resampling_methods_applied.ipynb)
+Working through applied exercises: [My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch5_resampling_methods_applied.ipynb)
 
 - estimating test error
 - validation sets
@@ -189,28 +191,28 @@ Working through applied exercises: [My notebook](./coursework-ISL/ch5_resampling
 - bootstrap (to estimate standard errors for logistic regression)
 
 
-## #47: 2018-09-18
+### 47. 2018-09-18
 
 An Introduction to Statistical Learning: ch5: **Resampling Methods**. 
 
-Completed conceptual exercises: [My notebook](./coursework-ISL/ch5_resampling_methods_conceptual.ipynb)
+Completed conceptual exercises: [My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch5_resampling_methods_conceptual.ipynb)
 
 - probability theory review
 - probability theory and the bootstrap sampling technique
 - k-fold cross validation
 - comparison of validation approaches
 
-## #46: 2018-09-17
+### 46. 2018-09-17
 
 Studied Introduction to Statistical Learning: ch5: **Resampling Methods**.
 
 
 
-## #45: 2018-09-16
+### 45. 2018-09-16
 
 An Introduction to Statistical Learning: ch4: **Classification**. 
 
-Completed applied exercises: [My notebook](./coursework-ISL/ch4_classification_applied.ipynb)
+Completed applied exercises: [My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch4_classification_applied.ipynb)
 
 - Logistic regression to classify automobiles by fuel efficiency
 - Linear discriminant analysis (LDA)
@@ -220,22 +222,22 @@ Completed applied exercises: [My notebook](./coursework-ISL/ch4_classification_a
 - log transforms
 
 
-## #44: 2018-09-15
+### 44. 2018-09-15
 
 An Introduction to Statistical Learning: ch4: **Classification**. 
 
-Working through applied exercises: [My notebook](./coursework-ISL/ch4_classification_applied.ipynb)
+Working through applied exercises: [My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch4_classification_applied.ipynb)
 
 - Logistic regression to predict stock returns
 - Confusion matrix
 - Logistic regression statistics, false positive, true negatives etc.
 
 
-## #43: 2018-09-14
+### 43. 2018-09-14
 
 An Introduction to Statistical Learning: ch4: **Classification**. 
 
-Completed conceptual exercises: [My notebook](./coursework-ISL/ch4_classification_conceptual.ipynb)
+Completed conceptual exercises: [My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch4_classification_conceptual.ipynb)
 
 - simplification of cost function for logistic regression
 - bayes classifier
@@ -246,42 +248,42 @@ Completed conceptual exercises: [My notebook](./coursework-ISL/ch4_classificatio
 - odds
 
 
-## #42: 2018-09-13
+### 42. 2018-09-13
 
 An Introduction to Statistical Learning: ch3: **Linear Regression**. 
 
 Completed applied exercises:
 
-[My notebook](./coursework-ISL/ch3_linear_regression_practical.ipynb)
+[My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_practical.ipynb)
 
-## #41: 2018-09-12
-
-An Introduction to Statistical Learning: ch3: **Linear Regression**. 
-
-Working through applied exercises:
-
-[My notebook](./coursework-ISL/ch3_linear_regression_practical.ipynb)
-
-## #40: 2018-09-10
+### 41. 2018-09-12
 
 An Introduction to Statistical Learning: ch3: **Linear Regression**. 
 
 Working through applied exercises:
 
-[My notebook](./coursework-ISL/ch3_linear_regression_practical.ipynb)
+[My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_practical.ipynb)
 
-## #39: 2018-09-8
+### 40. 2018-09-10
 
 An Introduction to Statistical Learning: ch3: **Linear Regression**. 
 
 Working through applied exercises:
 
-[My notebook](./coursework-ISL/ch3_linear_regression_practical.ipynb)
+[My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_practical.ipynb)
+
+### 39. 2018-09-8
+
+An Introduction to Statistical Learning: ch3: **Linear Regression**. 
+
+Working through applied exercises:
+
+[My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_practical.ipynb)
 
 
-## Friday #38: 2018-09-07
+### 38. 2018-09-07
 
-Working on practical exercises from chapter 3 of An Introduction to Statistical Learning. [My notebook](./coursework-ISL/ch3_linear_regression_practical.ipynb).
+Working on practical exercises from chapter 3 of An Introduction to Statistical Learning. [My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_practical.ipynb).
 
 - implemented several key statistics from scratch to bolster my understanding
 - emulated R's powerful lm().plot() functionality in python, it wasn't available
@@ -291,15 +293,15 @@ Thoughts:
 I'm suprised how much work I had to do to emulate R's lm().plot() functionality. The resultant plots seem really useful, particularly as they provide insight for multivariate models, and anomaly detection in that context. Perhaps worth a blog post to see if useful to others?
 
 
-## Thursday #37: 2018-09-06
+### 37. 2018-09-06
 
-Completed exercises on conceptual topics from chapter 3 of An Introduction to Statistical Learning. [My notebook](./coursework-ISL/ch3_linear_regression_conceptual.ipynb).
+Completed exercises on conceptual topics from chapter 3 of An Introduction to Statistical Learning. [My notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_conceptual.ipynb).
 
 Thoughts:
 
 I've noticed that there are different mathematical approaches to linear regression. Hastie and Tibshirani's notation includes a lot of summations, perhaps to avoid linear algebra being pre-requisite, but I find the vectorised forms more intuitive.
 
-## Wednesday #36: 2018-09-05
+### 36. 2018-09-05
 
 Study Linear Regression, chapter 3 of [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/). 
 
@@ -320,7 +322,7 @@ Picked up some ideas on how to improve my House Prices kaggle submission, includ
 Had an idea for project using cluster analysis / unsupervised methods for classification of head impact during sport. I've ordered a 9-DOF sensor to hook up to my arduino and gather some data.
 
 
-## Monday #35: 2018-09-03
+### 35. 2018-09-03
 
 Study Linear Regression, chapter 3 of [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/). 
 
@@ -331,18 +333,18 @@ Cross referenced with [Stanford CS229 lecture 2](https://see.stanford.edu/Course
 
 
 
-## Sunday #34: 2018-09-02
+### 34. 2018-09-02
 
-Today I did the applied exercises from chapter 2 of ISL. Here's [my notebook](./coursework-ISL/ch2_statistical_learning.ipynb). Good exercise in preprocessing and exploration of datasets, sharpening up in Pandas and Matplotlib / Seaborn.
+Today I did the applied exercises from chapter 2 of ISL. Here's [my notebook](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch2_statistical_learning.ipynb). Good exercise in preprocessing and exploration of datasets, sharpening up in Pandas and Matplotlib / Seaborn.
 
 
-## Saturday #33: 2018-09-01
+### 33. 2018-09-01
 
 - Read chapters 1 & 2 of [An Introduction to Statistical Learning](http://www-bcf.usc.edu/~gareth/ISL/) (ISL)
-- Completed [conceptual exercises](./coursework-ISL/ch2_statistical_learning.ipynb) from book
+- Completed [conceptual exercises](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch2_statistical_learning.ipynb) from book
 
 
-## Friday #33: 2018-08-31
+### 33. 2018-08-31
 
 Next up a tour of supervised learning techniques. I've decided to take the Stanford course on [Statistical Learning](https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/about) by Trevor Hastie and Robert Tibshirani. My worfklow for each chapter will be:
 
@@ -355,7 +357,7 @@ Today I completed the video lectures for chapters 1 sand 2.
 
 
 
-## Tuesday #32: 2018-08-28
+### 32. 2018-08-28
 
 Kaggle Competition – [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
 
@@ -381,7 +383,7 @@ I feel like I've taken my Kaggle score as far as I can using a simple linear mod
 
 See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression)
 
-## Monday #31: 2018-08-27
+### 31. 2018-08-27
 
 Kaggle Competition – [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
 
@@ -402,7 +404,7 @@ Today I looked at improving my results by removing anomalies from my training se
 
 See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression)
 
-## Sunday #30: 2018-08-26
+### 30. 2018-08-26
 
 Kaggle Competition – [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
 
@@ -416,7 +418,7 @@ Today I focused on minimising exponential characteristics in to make relationshi
 
 See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression)
 
-## Saturday #29: 2018-08-25
+### 29. 2018-08-25
 
 Kaggle Competition – [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
 
@@ -429,7 +431,7 @@ Kaggle Competition – [House Prices: Advanced Regression Techniques](https://ww
 
 See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression)
 
-## Friday #28: 2018-08-24
+### 28. 2018-08-24
 
 Kaggle Competition – [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
 
@@ -443,13 +445,13 @@ Kaggle Competition – [House Prices: Advanced Regression Techniques](https://ww
 
 Thoughts:
 
-Cross-validation like feature engineering is another topic that seems critical to practical application of ML, yet is not widely covered in the literature I've seen so far. The current #1 Kaggler, Shubin Dai (bestfitting), puts a lot of weight on designing good CVs as part of his approach described in this [interview](http://blog.kaggle.com/2018/05/07/profiling-top-kagglers-bestfitting-currently-1-in-the-world/)
+Cross-validation like feature engineering is another topic that seems critical to practical application of ML, yet is not widely covered in the literature I've seen so far. The current 1 Kaggler, Shubin Dai (bestfitting), puts a lot of weight on designing good CVs as part of his approach described in this [interview](http://blog.kaggle.com/2018/05/07/profiling-top-kagglers-bestfitting-currently-1-in-the-world/)
 
 During my own experimentation I observed surprisingly high variation between different approaches. 
 
 See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression)
 
-## Thursday #27: 2018-08-23
+### 27. 2018-08-23
 
 Today I focused on visualisation and feature engineering of data for the Kaggle competition – [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
 
@@ -471,7 +473,7 @@ This [talk by Andrej Karpathy](https://vimeo.com/274274744) from Tesla, gives an
 
 See my [notebook here](https://www.kaggle.com/alanmartyn/linear-regression)
 
-## Wednesday #26: 2018-08-22
+### 26. 2018-08-22
 
 Today I started the Kaggle competition – [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques)
 
@@ -490,7 +492,7 @@ Thoughts:
 The Kaggle dataset is not as 'clean' as I imagined. There is plenty of inconsistency in the formatting and labelling that will need to tackled before it can be passed to a model. I'm going to segment real, count, ordinal and categorical data in case I need to process them separately.
 
 
-## Tuesday Day #25: 2018-08-21
+### 25. 2018-08-21
 
 Meet with study buddy to revise entire [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning) course. Focus on areas we found most difficult. We cover all items under 'Revisit' in this data log. It was really useful to talk through and test each others understanding, felt like I came away with much improved intution in key areas such as numpy broadcasting, inner products and Taylor Series Approximation.
 
@@ -499,13 +501,13 @@ Our search for suitable London housing datasets was fruitless. The Land Registry
 We decide to start by tackling the [House Prices: Advanced Regression Techniques](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) Kaggle competition.
 
 
-## Friday Day #24: 2018-08-17
+### 24. 2018-08-17
 
 Having completed the [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning) course, I met up with my study buddy to do plan next steps and revise the completed course.
 
 We decide to do some applied work next week to predict house prices. Ideally we'd like to predict London house prices, so we decide to look for datasets.
 
-## Thursday Day #23: 2018-08-16
+### 23. 2018-08-16
 
 **COMPLETE** [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Principal Component Analysis** week 4 including:
 
@@ -516,7 +518,7 @@ We decide to do some applied work next week to predict house prices. Ideally we'
 
 
 
-## Wednesday Day #22: 2018-08-15
+### 22. 2018-08-15
 
 [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Principal Component Analysis** week 4 including:
 
@@ -533,7 +535,7 @@ Revisit:
 
 
 
-## Tuesday Day #21: 2018-08-14
+### 21. 2018-08-14
 
 [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Principal Component Analysis** week 3 including:
 
@@ -546,7 +548,7 @@ Revisit:
     - linear regression for boston house prices
 
 
-## Monday Day #20: 2018-08-13
+### 20. 2018-08-13
 
 [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Principal Component Analysis** week 2 including:
 
@@ -560,7 +562,7 @@ Revisit:
 - Programming Assignment: Inner products and angles def pairwise_distance_matrix(X, Y)
 - What areas of this programming assignement required inner product generalisations?
 
-## Sunday Day #19: 2018-08-12
+### 19. 2018-08-12
 
 - I took the first 8 lectures in Pavel Grinfeld's [inner product course](https://www.youtube.com/playlist?list=PLlXfTHzgMRULZfrNCrrJ7xDcTjGr633mm&disable_polymer=true)
 - Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Principal Component Analysis** week 2 including:
@@ -573,7 +575,7 @@ Revisit:
 
 - Inner product: distances between vectors: I can't replicate Deisenroth's result @3:00, 12^0.5
 
-## Saturday Day #18: 2018-08-11
+### 18. 2018-08-11
 
 Studied course [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Principal Component Analysis** week 1 & 2 including:
 
@@ -588,7 +590,7 @@ Studied course [Mathematics for Machine Learning](https://www.coursera.org/speci
     - [Identifying inner products](https://www.youtube.com/watch?v=8M6eo3j7jO4)
 
 
-## Friday Day #17: 2018-08-10
+### 17. 2018-08-10
 
 Started course [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Principal Component Analysis** week 1 including:
 
@@ -601,7 +603,7 @@ I read the Principle Compenent Analysis section in Hastie & Tibshirani's Introdu
 
 
 
-## Wednesday: Day #16: 2018-08-08 
+### 16. 2018-08-08 
 
 **Completed course:** [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Multivariate Calculus** 
 
@@ -614,7 +616,7 @@ Studied week 6 including:
 
 I listened to [The History of Machine Learning from the Inside Out](https://robohub.org/talking-machines-history-of-machine-learning-w-geoffrey-hinton-yoshua-bengio-yann-lecun/) podcast where Geoffrey Hinton, Yoshua Bengio and Yann LeCun discuss motivations for deep-learning before state of the art results. Useful terminology, and interesting to hear their emphsasis on unsupervised learning as the area for future advances.
 
-## Tuesday: Day #15: 2018-08-07 
+### 15. 2018-08-07 
 
 Studied [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Multivariate Calculus** week 5 including:
 
@@ -630,7 +632,7 @@ I wanted more detail on constrained optimisation so I also took the Khan Academy
 I finished the first chapter of Kevin Murphy's Machine Learning book.
 
 
-## Monday: Day #14: 2018-08-06 
+### 14. 2018-08-06 
 
 Studied [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Multivariate Calculus** week 4 + 5 including:
 
@@ -644,7 +646,7 @@ Revisit:
 - week 4 / 2D Taylor series / q4 improve notes on linearisation, and ask forum question
 - week 4 / Taylor Series Assessment / q4, why is f(x) = (x/2)^2​ sin(2x)/2 odd? Why are functions that are same when rotated 180deg about the origin odd?
 
-## Sunday: Day #13: 2018-08-05 
+### 13. 2018-08-05 
 
 Studied [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Multivariate Calculus** week 4 including:
 
@@ -659,7 +661,7 @@ Revisit:
 
 - week 4 / Taylor series - Special cases / Q4 – why is f(x) = 1/(1+x)^2 discontinuous in the complex plane? 
 
-## Saturday: Day #12: 2018-08-04
+### 12. 2018-08-04
 
 Studied [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Multivariate Calculus** week 4 including:
 - Building approximate functions
@@ -668,7 +670,7 @@ Studied [Mathematics for Machine Learning](https://www.coursera.org/specializati
 Implemented backpropagation in Python with Numpy. That's the 3rd time I've implemented backprop now, having a detailed knowledge of the chain rule was really useful. This time around I feel like I've grokked it.
 
 
-## Friday: Day #11: 2018-08-03
+### 11. 2018-08-03
 
 Studied [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Multivariate Calculus** week 3 including:
 
@@ -681,7 +683,7 @@ Great to revisit the basic neural nets example with the linear algebra and calcu
 
 I read the article [Google's AutoML: Cutting Through the Hype](http://www.fast.ai/2018/07/23/auto-ml-3/) which offers an interesting perspective on the commercialisation of ML tech, some potential pitfalls for big companies in this area.
 
-## Thursday: Day #10: 2018-08-02
+### 10. 2018-08-02
 
 Studied [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): **Multivariate Calculus** week 2 including:
 
@@ -697,7 +699,7 @@ There's also a ux that allows doctors to inspect what parts of a given health re
 
 
 
-## Wednesday: Day #9: 2018-08-01
+### 9. 2018-08-01
 
 I met up with my study buddy to discuss progress. We decided to focus primarily on theoretical track for next 2 weeks to get foundational maths in place. Up until now we have found it difficult to split away from that track, and the content feels critical to more applied study.
 
@@ -708,7 +710,7 @@ Revised differentiation basics including Product Rule, Chain Rule, and practice 
 I got some advice from friends on best practices for self-directed study. I'm now separating my notes into two notebooks: 1) clean revision notes 2) messy exercise notes. Each morning I now reinforce my understanding by recalling concepts covered the previous day, I then review my notes as reinforcement. I'll also start revisiting the harder exercise questions as further reinforcement.
 
 
-## Tuesday: Day #8: 2018-07-31
+### 8. 2018-07-31
 
 I completed the [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): Linear algebra course, completing final exam. 
 
@@ -720,14 +722,14 @@ I went back an reviewed some of the principles covered in more detail, by review
 
 There's definitely more to learn about Linear Algebra than could be covered in the Imperial course, but it has given me a good sense of orientation and a desire to continue study in this area. My additional studies on Khan Academy have closed the loop on some areas I was intrigued by such as rref, and rank. 
 
-## Monday: Day #7: 2018-07-30
+### 7. 2018-07-30
 
 [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): Linear algebra course, covered: 
 - study of eigenvectors 
 - implementation of Google-esque PageRank algorithm which finds largest eigenvector with power method
 
 
-## Sunday: Day #6: 2018-07-29
+### 6. 2018-07-29
 
 - [Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): Linear algebra. Covered:
     - Einstein summation convention and the symmetry of the dot product
@@ -754,7 +756,7 @@ A heads down day studying linear algebra. The exams provide a lot of exercise wh
 
 Great to work on some hands-on examples manipulating information with matrices. Techniques feel generally applicable. Insights on how to measure the information available in a set of vectors, e.g. are they linearly dependant? will be valuable in assessing/designing datasets.
 
-## Saturday: Day #5: 2018-07-28
+### 5. 2018-07-28
 
 **Today's progress:**
 
@@ -778,7 +780,7 @@ Possible avenues for applied projects include:
 
 
 
-## Friday: Day #5: 2018-07-27
+### 5. 2018-07-27
 
 **Today's progress:**
 
@@ -794,7 +796,7 @@ Possible avenues for applied projects include:
 Continued with David Dye's course. Had to fix my front door lock so that was a distraction. The exercises in week 3 require quite laborious calculations with lots of basic arithmetic. It's important to be very careful not to cause cascading errors by dropping a minus sign or other basic arithmetic errors. I mad a few. Now I understand how to derive the inverse of a matrix and , and its given me a good intuition for what goes on when you call inv(A)!
 
 
-## Thursday: Day #4: 2018-07-26
+### 4. 2018-07-26
 
 **Today's progress:**
 
@@ -824,7 +826,7 @@ Tomorrow I'd like to get at least week 3 of MMfL done and chap 1 of interview tr
 Finally, my grandmother's 2-year old prediction that ethics will increasingly be a defining consideration in ML applications seems to be bolstered [today](https://www.bbc.co.uk/news/technology-44977366) as I read about biases hampering deployment of facial recognition systems. Throws up interesting questions like: How to measure bias in a dataset? How to measure bias in a model? 
 
 
-## Wednesday: Day #3: 2018-07-25
+### 3. 2018-07-25
 
 **Today's progress:**
 
@@ -843,7 +845,7 @@ Glad to finish the backprop coursework. It was amazing to see hidden layers visu
 Kevin Murphy's seminal book just arrived. Linear regression doesn't appear until page 219, and deep learning not until 999, so I'd better get to it.
 
 
-## Tuesday: Day #2: 2018-07-24
+### 2. 2018-07-24
 
 **Today's progress:** 
 
@@ -853,7 +855,7 @@ Kevin Murphy's seminal book just arrived. Linear regression doesn't appear until
 - listened to Talking Machines podcast episode 1
 - had cursory skim through Google's new [Machine Learning guides](https://developers.google.com/machine-learning/guides/), these look useful, might fold into curriculum
 - started building a list of project ideas, i need to publish these
-- added [my coursework](./coursework-ng) from Andrew Ng's Machine Learning course to this repo
+- added [my coursework](https://github.com/a-martyn/ml-sabbatical/tree/master/coursework-ng) from Andrew Ng's Machine Learning course to this repo
 
 **Thoughts:** 
 
@@ -870,17 +872,19 @@ Great to get back up and running with Ng's course. Ng recommends implementing fe
 When implementing feedforward I was getting an unexpected value. I was able to debug it by isolating one training example as a test case, and then using intuition to notice that the cost should not be a negative value. I didn't get as far on the coursework as I'd hoped, but feel like I'll be faster today.
 
 
-## Monday: Day #1: 2018-07-23
+### 1. 2018-07-23
 
 **Today's progress:** 
 
-- [x] define [curriculum](./docs/005-curriculum.md) 
+- [x] define [curriculum](https://github.com/a-martyn/ml-sabbatical/tree/master/docs/005-curriculum.md) 
 - [x] setup this learning log
-- [x] share [curriculum](./docs/005-curriculum.md) and [motivations]((./docs/002-curriculum.md)) with friends for feedback
+- [x] share [curriculum](https://github.com/a-martyn/ml-sabbatical/tree/master/docs/005-curriculum.md) and [motivations]((https://github.com/a-martyn/ml-sabbatical/tree/master/docs/002-curriculum.md)) with friends for feedback
 - [x] ordered some textbooks
 
 **Thoughts:** 
 
-It's day 1. Well not quite, I've spent the last few days researching the available learning resources including courses and textbooks. There's a lot out there, I started to feel a bit lost at sea, so I decided to use the UCL MSC in machine learning as a basis, and focused on material that covered prerequisite foundational material as well the core unsupervised learning module, here's my [notes](./docs/004-books-and-courses.md).
+It's day 1. Well not quite, I've spent the last few days researching the available learning resources including courses and textbooks. There's a lot out there, I started to feel a bit lost at sea, so I decided to use the UCL MSC in machine learning as a basis, and focused on material that covered prerequisite foundational material as well the core unsupervised learning module, here's my [notes](https://github.com/a-martyn/ml-sabbatical/tree/master/docs/004-books-and-courses.md).
 
-Today I met up with my study partner to compare notes and pin down a [curriculum](./docs/005-curriculum.md). It is a big relief to have this down on paper. Looking forwards to getting into it tomorrow.
+Today I met up with my study partner to compare notes and pin down a [curriculum](https://github.com/a-martyn/ml-sabbatical/tree/master/docs/005-curriculum.md). It is a big relief to have this down on paper. Looking forwards to getting into it tomorrow.
+
+</div>
