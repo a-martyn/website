@@ -189,7 +189,7 @@ I think we need some introduction to bayesian statistics. Options I've found so 
 - Course: [Andrew Ng's Deep Learning Specialisation](https://www.coursera.org/specializations/deep-learning)
 - Book: [*Deep Learning* by Ian Goodfellow and Yoshua Bengio and Aaron Courville](https://www.deeplearningbook.org/)
 
-##### References
+##### Other references
 
 - This is the best [ML bibliography](https://humancompatible.ai/bibliography) I've found from Centre for Human-Compatible Artificial Intelligence. 
 
