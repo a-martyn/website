@@ -155,6 +155,11 @@ Links to my notebooks below:
 [Chapter 8 - Tree-Based Methods: Applied](http://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_applied.ipynb)
 
 
+[Chapter 9 - Support Vetor Machines: Labs](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_labs.ipynb)  
+[Chapter 9 - Support Vetor Machines: Conceptual](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_conceptual.ipynb)  
+[Chapter 9 - Support Vetor Machines: Applied](https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_applied.ipynb)
+
+
 The source code for these notebooks is available on [Github here](https://github.com/a-martyn/ISL-python).
 
 
