@@ -5,7 +5,7 @@
 Day-by-day notes as I study machine learning.
 
 
-### 70. 2018-11-09
+### 72. 2018-11-09
 
 Introduction to Statistical Learning: ch9: **Support Vector Machines** Conceptual:
 
@@ -13,7 +13,7 @@ Introduction to Statistical Learning: ch9: **Support Vector Machines** Conceptua
 - linear and non-linear decisin boundaries
 - [Notebook: Support Vector Machines – Conceptual](https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_conceptual.ipynb)
 
-### 69. 2018-11-08
+### 71. 2018-11-08
 
 Introduction to Statistical Learning: ch9: **Support Vector Machines** Applied:
 
@@ -22,7 +22,7 @@ Introduction to Statistical Learning: ch9: **Support Vector Machines** Applied:
 - reducing training time, preprocessing for SVM
 - [Notebook: Support Vector Machines – Applied](https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_applied.ipynb)
 
-### 68. 2018-11-07
+### 70. 2018-11-07
 
 Introduction to Statistical Learning: ch9: **Support Vector Machines** Applied:
 
@@ -30,7 +30,7 @@ Introduction to Statistical Learning: ch9: **Support Vector Machines** Applied:
 - SVM kernel selection 
 - [Notebook: Support Vector Machines – Applied](https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_applied.ipynb)
 
-### 67. 2018-11-06
+### 69. 2018-11-06
 
 Introduction to Statistical Learning: ch9: **Support Vector Machines** Labs:
 
@@ -38,6 +38,34 @@ Introduction to Statistical Learning: ch9: **Support Vector Machines** Labs:
 - ROC curves
 - Multi-class SVM
 - [Notebook: Support Vector Machines – Labs](https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_labs.ipynb)
+
+
+### 68. 2018-10-30
+
+##### Day 2: Predicting and preventing bursts - Data Hackathon (South East Water)
+
+- Debugged our preprocessing pipeline
+- Fit a model and achieved some pretty exciting results
+- Presented our results and earned a special mention
+- Check our [slides here](https://docs.google.com/presentation/d/1kaTD7jr0DhJR7IDXVY0lVQ7-jD_r_qhhgqzK9_5nKRc/edit?usp=sharing)
+
+
+### 67. 2018-10-29
+
+##### Day 1: Predicting and preventing bursts - Data Hackathon (South East Water)
+
+I entered this [data science competition](https://www.eventbrite.co.uk/e/predicting-and-preventing-bursts-data-hackathon-south-east-water-tickets-51138148579#) along with my study partner. 
+
+- Started with some initital data exploration. Easily the largest dataset I've come across yet with 3 billion observations.
+- Identified a **Goal**: To help the South East Water team understand:
+  - Will there be a burst tomorrow?
+  - If so, where?
+- Designed an initial feature set with 10-day lag variables for flow by geographic area
+- Set about pre-processing
+- Hit some scale issues to work around
+- Lef pre-processing running over night 
+
+
 
 
 ### 66. 2018-10-23
