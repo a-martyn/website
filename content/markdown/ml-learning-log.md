@@ -4,6 +4,42 @@
 
 Day-by-day notes as I study machine learning.
 
+
+### 70. 2018-11-09
+
+Introduction to Statistical Learning: ch9: **Support Vector Machines** Conceptual:
+
+- numpy implementation of maximal margin classifier
+- linear and non-linear decisin boundaries
+- [Notebook: Support Vector Machines – Conceptual](https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_conceptual.ipynb)
+
+### 69. 2018-11-08
+
+Introduction to Statistical Learning: ch9: **Support Vector Machines** Applied:
+
+- SVM in context of minimal linear seperation
+- Application of SVM to real datasets
+- reducing training time, preprocessing for SVM
+- [Notebook: Support Vector Machines – Applied](https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_applied.ipynb)
+
+### 68. 2018-11-07
+
+Introduction to Statistical Learning: ch9: **Support Vector Machines** Applied:
+
+- dataset simulation
+- SVM kernel selection 
+- [Notebook: Support Vector Machines – Applied](https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_applied.ipynb)
+
+### 67. 2018-11-06
+
+Introduction to Statistical Learning: ch9: **Support Vector Machines** Labs:
+
+- Tuning support vector machines
+- ROC curves
+- Multi-class SVM
+- [Notebook: Support Vector Machines – Labs](https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_labs.ipynb)
+
+
 ### 66. 2018-10-23
 
 Introduction to Statistical Learning: ch8: **Tree-Based Methods** Applied:
