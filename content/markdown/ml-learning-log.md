@@ -5,6 +5,127 @@
 Day-by-day notes as I study machine learning.
 
 
+### 84. 2018-12-04
+
+
+- [] [CS231n: Module 2: Convolutional Neural Networks](http://cs231n.github.io/)
+- [] [Deep Learning with PyTorch: A 60 Minute Blitz](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
+- [] [Data Loading and Processing Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)
+- [] [Learning PyTorch with Examples](https://pytorch.org/tutorials/beginner/pytorch_with_examples.html)
+
+
+
+### 83. 2018-12-03
+
+Deep Learning:
+
+- [Human Protein Atlas Image Classification Kaggle](https://www.kaggle.com/c/human-protein-atlas-image-classification): Classifying subcellular protein patterns in human cells: 
+  - documented work so far for collaborator
+  - discussed possible next steps and ways forward
+
+### 82. 2018-11-29
+
+Deep Learning:
+- Fast.ai Lesson 6 – RNNs: Interpreting embeddings; RNNs from scratch 
+- Fast.ai Lesson 7 – CNN Architecture: Resnets from scratch 
+
+
+### 80. 2018-11-28
+
+Deep Learning:
+- Fast.ai Lesson 5 – NLP: Collaborative filtering; Inside the training loop
+- [Human Protein Atlas Image Classification Kaggle](https://www.kaggle.com/c/human-protein-atlas-image-classification): Classifying subcellular protein patterns in human cells: 
+  - **Leaderboard Score: 0.474 (Top 10% of 1200)**
+  - developed training loop to get a good baseline
+  - implemented data processing scripts
+
+### 79. 2018-11-27
+
+- [Human Protein Atlas Image Classification Kaggle](https://www.kaggle.com/c/human-protein-atlas-image-classification): Classifying subcellular protein patterns in human cells: 
+  - preprocessing
+  - setup pipeline
+  - initial model
+
+
+
+### 78. 2018-11-26
+
+Deep Learning:
+- Fast.ai Lesson 4 – Embeddings: Structured, time series, & language models
+- Fast.ai Lesson 3 – Overfitting: Improving your image classifier
+
+Maths Practice:
+- Linear Algebra [Lemma](https://www.lem.ma/) 
+
+### 77. 2018-11-23
+
+Deep Learning:
+- [Plant Seedlings Kaggle](https://www.kaggle.com/c/plant-seedlings-classification): Determining the species of a seedling from an image: 
+  - **Leaderboard Score: 0.97858 (Top 18% of 836)**
+  - Feature engineering
+  - Data augmentation from scratch
+
+- Fast.ai Lesson 2 – CNNs: Convolutional neural networks applied
+
+Maths Practice:
+
+- Linear Algebra [Lemma](https://www.lem.ma/) 
+
+### 76. 2018-11-22
+
+Deep Learning:
+
+- [Plant Seedlings Kaggle](https://www.kaggle.com/c/plant-seedlings-classification): Determining the species of a seedling from an image: 
+  - Baseline implementation achieves Leaderboard Score: 0.96473 (96.4% accuracy)
+  - Hyperparemeter tuning
+  - training pipeline optimisation
+
+Maths Practice:
+
+- Linear Algebra [Lemma](https://www.lem.ma/) 
+
+### 75. 2018-11-21
+
+Deep Learning:
+
+- Fast.ai Lesson 1 – CNNs: Recognizing cats and dogs
+- [Plant Seedlings Kaggle](https://www.kaggle.com/c/plant-seedlings-classification): 
+  - Setup a pipeline for classifying 14 species of plants from images of seedlings
+  - Data exploration
+
+
+
+Maths Practice:
+
+- Linear Algebra [Lemma](https://www.lem.ma/) 
+
+### 74. 2018-11-20
+
+Deep learning:
+
+- Setup a remote GPU server optimised for deep learning
+
+Maths practice:
+
+- Linear algebra revision: [Lemma](https://www.lem.ma/) 1.1 Introduction
+- Probability: I watched first few lectures from Mathmonk, but didn't find it very engaging so don't think I'l pursue that course
+
+
+### 73. 2018-11-19
+
+Met with study partner and planned curriculumn for studying deep learning.
+
+
+Set goal:
+- To implement in code 4-5 research papers that describe important concepts in deep-learning.
+
+Decided to:
+- Complete part 1 of [fast.ai mooc](https://course.fast.ai/) as an introduction to deep learning
+- Learn PyTorch
+- Start by implementing papers that describe concepts like Reccurrent Neural Netowrks (RNNs), and LSTMs
+
+
+
 ### 72. 2018-11-09
 
 Introduction to Statistical Learning: ch9: **Support Vector Machines** Conceptual:
