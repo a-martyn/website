@@ -15,9 +15,9 @@ Day-by-day notes as I study machine learning.
 
 Deep Learning:
 
-- [x] [CS231n: Module 2: Convolutional Neural Networks](http://cs231n.github.io/) (Note: includes good summary of literature on ResNets which could be useful later)
-- [x] Noted here that Karpathy reccomends implementing networks from scratch without framework [Andrew Ng interviews Andrej Karpathy](https://www.youtube.com/watch?v=_au3yw46lcg)
-- [x] [Deep Learning with PyTorch: A 60 Minute Blitz](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
+- [CS231n: Module 2: Convolutional Neural Networks](http://cs231n.github.io/) Includesa  good summary of literature on ResNets which could be useful later
+- [Andrew Ng interviews Andrej Karpathy](https://www.youtube.com/watch?v=_au3yw46lcg) Noted here that Karpathy reccomends implementing networks from scratch without framework
+- [Deep Learning with PyTorch: A 60 Minute Blitz](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 
 
 ### 83. 2018-12-03
