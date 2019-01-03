@@ -7,8 +7,87 @@ Day-by-day notes as I study machine learning.
 
 ### Todo
 
-- [] [Data Loading and Processing Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)
-- [] [Learning PyTorch with Examples](https://pytorch.org/tutorials/beginner/pytorch_with_examples.html)
+
+### 93. 2018-12-19
+
+Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
+- Write up [results and conclusions](https://github.com/a-martyn/resnet)
+- Publish on github
+- First paper implementation complete!
+
+
+### 92. 2018-12-18
+
+Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
+- Write up [results and conclusions](https://github.com/a-martyn/resnet)
+
+
+### 92. 2018-12-17
+
+Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
+- Discovered crucial tweak, adding batch norm *averaging* (track_running_stats=True in PyTorch).
+- This implementation reproduces the original paper’s observations within less than 1% of the reported test error. 
+
+### 92. 2018-12-14
+
+Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
+- Check original authors implementation. Unfortunately the CIFAR-10 model is not provided, so I'm looking at the [model from the papers ImageNet experiment](https://github.com/KaimingHe/deep-residual-networks/blob/master/prototxt/ResNet-50-deploy.prototxt). I notice that bias is implemented in batch norm layer, and find authors clarification on that [here](https://github.com/KaimingHe/deep-residual-networks/issues/10)
+- I started writing up results at this stage so you can see results for this version of implementation [here](https://github.com/a-martyn/resnet/blob/e0de6167574de4a6aa561a9b1350b5be99ab52b7/README.md). 
+
+### 91. 2018-12-13
+
+Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
+- My implementation is producing a test error approximately 1% higher for the plain network baselines and a 2% increase for the residual nets. I'm missing something but not sure what...
+- I have a hunch that batch normalisation setup could be the cause of discrepancy, because from playing around with my implementation I notice that the configuration of batch normalisation can have a dramatic effect on results.
+- Review of batch normalisation theory. These lectures from Andrew Ng's deeplearning course prove useful:
+  - https://www.youtube.com/watch?v=em6dfRxYkYU&t=7s
+  - https://www.youtube.com/watch?v=nUUqwaxLnWs
+  - https://www.youtube.com/watch?v=5qefnAek8OA
+
+
+### 90. 2018-12-12
+
+Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
+
+
+### 89. 2018-12-11
+
+Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
+- Implement test set evaluation in training loop
+- Run plain net baseline training for each network size and record results
+
+### 88. 2018-12-10
+
+Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
+
+
+Maths Practice:
+- Linear Algebra [Lemma](https://www.lem.ma/) 
+
+
+### 87. 2018-12-07
+
+Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
+
+- Implemented "plain network" – deep neaural net withoout shortcuts – as baseline described in paper
+- Implemented learning loop
+
+
+
+### 86. 2018-12-06
+
+Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
+
+- Studied original [resnet paper](https://arxiv.org/abs/1512.03385)
+- Implemented loading and augmentation of CIFAR 10 dataset per paper in PyTorch
+
+
+### 85. 2018-12-05
+
+Deep Learning:
+
+- [PyTorch: Data Loading and Processing Tutorial](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)
+- [PyTorch: Learning PyTorch with Examples](https://pytorch.org/tutorials/beginner/pytorch_with_examples.html)
 
 
 ### 84. 2018-12-04
@@ -24,7 +103,7 @@ Deep Learning:
 
 Deep Learning:
 
-- [Human Protein Atlas Image Classification Kaggle](https://www.kaggle.com/c/human-protein-atlas-image-classification): Classifying subcellular protein patterns in human cells: 
+- [Human Protein Atlas Image Classification Kaggle](https://www.kaggle.com/c/human-protein-atlas-image-classification): Classifying sub-cellular protein patterns in human cells: 
   - documented work so far for collaborator
   - discussed possible next steps and ways forward
 
@@ -39,14 +118,14 @@ Deep Learning:
 
 Deep Learning:
 - Fast.ai Lesson 5 – NLP: Collaborative filtering; Inside the training loop
-- [Human Protein Atlas Image Classification Kaggle](https://www.kaggle.com/c/human-protein-atlas-image-classification): Classifying subcellular protein patterns in human cells: 
+- [Human Protein Atlas Image Classification Kaggle](https://www.kaggle.com/c/human-protein-atlas-image-classification): Classifying sub-cellular protein patterns in human cells: 
   - **Leaderboard Score: 0.474 (Top 10% of 1200)**
   - developed training loop to get a good baseline
   - implemented data processing scripts
 
 ### 79. 2018-11-27
 
-- [Human Protein Atlas Image Classification Kaggle](https://www.kaggle.com/c/human-protein-atlas-image-classification): Classifying subcellular protein patterns in human cells: 
+- [Human Protein Atlas Image Classification Kaggle](https://www.kaggle.com/c/human-protein-atlas-image-classification): Classifying sub-cellular protein patterns in human cells: 
   - preprocessing
   - setup pipeline
   - initial model
