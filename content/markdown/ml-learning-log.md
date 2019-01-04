@@ -7,6 +7,52 @@ Day-by-day notes as I study machine learning.
 
 ### Todo
 
+- Read: http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+
+
+
+### 95. 2019-01-03
+
+Followed deeplearning.ai course to implement the fundamentals from scratch in Numpy:
+
+- implemented Recurrent Neural Network 
+- implemented LSTM 
+- implemented character-level language model to generate fake dinosaur names
+- implemented LSTM to generate Jazz music
+
+### 95. 2019-01-03
+
+HAPPY NEW YEAR!
+
+LSTM implementation:
+
+- To warm up I worked through the lectures on Recurrent Neural Networks from Andrew Ng's deeplearning.ai
+
+Maths Practice:
+- Linear Algebra [Lemma](https://www.lem.ma/) 
+
+
+### 94. Xmas paper reading:
+
+Next I'd like to implement a paper based upon recurrent neural network architectures. I've used Goodfellow's *Deep Learning* textbook to get acquainted with the subject. After scouting around the literature I end up reading the following papers. 
+
+#### [LSTM: A Search Space Odyssey, (Greff, Schmidhuber et al, 2017)](https://arxiv.org/abs/1503.04069)
+
+An empirical comparison of various incarnations of the LSTM that have appeared in the literature including the gated-recurrent-unit (GRU). Schmidhuber is widely credited as being the original inventor of the 'vanilla' LSTM. This paper provides clarification on the performance differences between the LSTM and GRU as well as other common variants. Includes a novel use of the Random Forest algorithm to assess the significance of hyper-parameters which is neat.
+
+#### [Regularizing and Optimizing LSTM Language Models, (Merity et al, 2017)](https://arxiv.org/abs/1708.02182): 
+
+Results from this paper paper are used as benchmarks by several [state-of-the-art results](https://github.com/RedditSota/state-of-the-art-result-for-machine-learning-problems) in NLP. It describes an LSTM setup with batch normalisation and a particular optimisation setup produce significant improvement over vanilla LSTM,
+
+#### [Universal Language Model Fine-tuning for Text Classification (Howard, Ruder, 2018)](https://arxiv.org/abs/1801.06146)
+
+The first (I think) paper to successfully describe the use of transfer-learning in NLP, known as ULMFit. Achieved SoTA before being superseded by ELMO and BERT. References the Merity paper as benchmark.
+
+#### [Sim-to-Real via Sim-to-Sim: Data-efficient Robotic Grasping via Randomized-to-Canonical Adaptation Networks (James et al, 2018)](https://arxiv.org/abs/1812.07252)
+
+Not an LSTM paper, but I couldn't resist. This paper combines a generative adversarial network with a DQN reinforcement learning algorithm to achieve SoTA in robotic arm control. Reinforcement learning algorithms can perform well when trained on 'canonical' images from a simulated environment with consistent lighting, textures and physics, but this performance doesn't translate to real world environments. This is known as the simulation-to-reality gap. This paper offers a novel solution by using a GAN to translate images from a randomised simulation to their canonical equivalents. It is then shown that this same GAN can be used to translate real world images to their canonical equivalent, meaning that the DQN algorithm only has to work with canonical representations and that the model can be trained on simulation data which is much cheaper to get.
+
+The authors achieve 91% grasp success by training on simulate data then 5,000 real examples (compared with 580,000 real examples for current SoTA). In a way, you could think of this as another example of transfer-learning in that the model is first trained broadly on simulated data before being fine-tuned on a few specific examples, real world in this case. 
 
 ### 93. 2018-12-19
 
@@ -21,6 +67,8 @@ Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet)
 Deep Learning: [Resnet Paper Implementation](https://github.com/a-martyn/resnet) in PyTorch
 - Write up [results and conclusions](https://github.com/a-martyn/resnet)
 
+LSTM implementation:
+- In preparation I read though the appropriate chapter in Goodfellow and Bengio's Deep Learning textbook: "Sequence Modelling: Recurrent and Recursive Nets"
 
 ### 92. 2018-12-17
 
