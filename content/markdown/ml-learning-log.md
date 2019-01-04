@@ -11,7 +11,7 @@ Day-by-day notes as I study machine learning.
 
 
 
-### 95. 2019-01-03
+### 96. 2019-01-04
 
 Followed deeplearning.ai course to implement the fundamentals from scratch in Numpy:
 
