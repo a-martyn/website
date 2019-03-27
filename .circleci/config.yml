@@ -12,9 +12,12 @@ jobs:
       - image: coxy1989/pandoc-aws
     steps:
       - checkout
+      - run: 
+          name: Go to content dir
+          command: (cd content)
       # - run: 
       #     name: Convert markdown to html
-      #     command: (cd content ; bash _convert_markdown_to_html.sh)
+      #     command: (bash _convert_markdown_to_html.sh)
       - run:  
           name: Upload to s3 host
           command: (aws s3 cp content s3://host-website-live --exclude "*" --include "css/*" --recursive ;
