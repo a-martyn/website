@@ -15,5 +15,5 @@ done
 # Convert the jupyter notebook files to html files
 NB_FILES="$(ls *.ipynb)"
 for filename_with_ext in $NB_FILES; do
-    jupyter nbconvert --template full --output-dir='./html' "$filename_with_ext"  
+    jupyter nbconvert --output-dir='./html' "$filename_with_ext"  
 done
