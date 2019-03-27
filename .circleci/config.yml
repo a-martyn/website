@@ -20,8 +20,8 @@ jobs:
       #     command: (bash _convert_markdown_to_html.sh)
       - run:  
           name: Upload to s3 host
-          command: (aws s3 cp content s3://host-website-live --exclude "*" --include "css/*" --recursive ;
-                    aws s3 cp content s3://host-website-live --exclude "*" --include "assets/*"  --recursive 
+          command: (aws s3 cp content s3://host-website-live --exclude "*" --include "css/*" --recursive;
+                    aws s3 cp content s3://host-website-live --exclude "*" --include "assets/*"  --recursive; 
                     aws s3 cp content/html s3://host-website-live --exclude "*" --include "*html"  --recursive)
 
 
