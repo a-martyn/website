@@ -13,12 +13,12 @@ Day-by-day notes as I study machine learning.
 
 ### 96. 2019-01-04
 
-Followed deeplearning.ai course to implement the fundamentals from scratch in Numpy:
+Followed deeplearning.ai course to implement the following from scratch in Numpy:
 
-- implemented Recurrent Neural Network 
-- implemented LSTM 
-- implemented character-level language model to generate fake dinosaur names
-- implemented LSTM to generate Jazz music
+- Recurrent Neural Network 
+- LSTM 
+- character-level language model to generate fake dinosaur names
+- LSTM to generate Jazz music
 
 ### 95. 2019-01-03
 
