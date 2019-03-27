@@ -13293,7 +13293,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The original <a href="https://arxiv.org/abs/1512.03385">ResNet</a> paper by Kaiming He et al. demonstrates the effect of residual shortcuts in large convolutional neural networks with up to 110 layers and 1.7 million parameters. In this notebook we'll explore the residual shortcut in the extreme minimal setting with just one layer and only 9 parameters. Although not quite as cool as winning ImageNet, as ResNet did in 2016, I hope this approach helps to clarify residual shortcuts, what they're good for, and how to use them.</p>
 <p>The ResNet architecture enables 110-layer convolutional networks to outperform 20-layer networks and in 2016 achieved state-of-the-art in computer vision classification tasks. The core idea is simple, a stack of 2-3 convolutional layers circumvented by a 'shortcut' connection from input to output. These 'residual blocks' are themselves stacked together to form the ResNet model, and appear often in machine learning literature, Kaggle entries and beyond.</p>
-<p><img src="../assets/resnet_block.jpg" alt="Resnet Block"></p>
+<p><img src="./assets/resnet_block.jpg" alt="Resnet Block"></p>
 <ul>
 <li>Figure 1. A ResNet block and the ResNet architecture</li>
 </ul>
@@ -13333,7 +13333,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a></h2><p>He et al. start from the observation that state-of-the-art 20-layer convolutional models out performed 56-layer models on image classification tasks at that time (Fig. 2).</p>
-<p><img src="../assets/fig1.png" alt="Fig. 2"></p>
+<p><img src="./assets/fig1.png" alt="Fig. 2"></p>
 <ul>
 <li>Figure 2. "Training error (left) and test error (right) on CIFAR-10 with 20-layer and 56-layer “plain” networks. The deeper network has higher training error, and thus test error. Similar phenomena on ImageNet is presented in Fig. 4." (from original paper)</li>
 </ul>
@@ -13356,7 +13356,7 @@ $$z = x + f(x) $$<p></p>
 <p>Whilst working on my own <a href="https://github.com/a-martyn/resnet">implementation of the ResNet paper</a>, I found this assumption surprising. Why would it be any easier for a convolutional layer to learn a function that maps to zero than it is to learn the identity function? Let's take a closer look.</p>
 <h2 id="A-minimal-example">A minimal example<a class="anchor-link" href="#A-minimal-example">&#182;</a></h2><p>Let's consider a minimal example, a single convolutional layer that outputs an array of the same shape as its input with kernel size 3, stride 1, padding 1. Our input is a tiny 3x3 grayscale image with a single channel. Let's assume that the objective is to perform the identity mapping.</p>
 <p>With a residual shortcut in place the layer's objective is to output a matrix of zeros irrespective of input because input is added to the layers output output via the shortcut (see equation 2.).</p>
-<p><img src="../assets/ZeroConv.jpg" alt="Figure 3."></p>
+<p><img src="./assets/ZeroConv.jpg" alt="Figure 3."></p>
 <ul>
 <li>Figure 3. Optimal parameters for a 3x3, stride 1 convolution that maps any input to zero.</li>
 </ul>
@@ -13425,7 +13425,7 @@ Output:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="../assets/IdentityConv.jpg" alt="Figure 4."></p>
+<p><img src="./assets/IdentityConv.jpg" alt="Figure 4."></p>
 <ul>
 <li>Figure 4. Optimal parameters for a 3x3, stride 1 convolution that maps any input to the unaltered input.</li>
 </ul>
@@ -13674,7 +13674,7 @@ $$l = \frac{\sum_{i=1}^{n}|x_i - y_i|}{n}$$<ul>
 <p>In the zero setting the model reduces loss to below 0.01 (dashed line) in 3.5 epochs, in the identity setting the model takes 10 epochs to achieve this. The wider confidence interval indicates greater variance in the identity setting.</p>
 <p>Even in this very minimal setting, there is evidence to support He's hypothesis. The model learns a mapping to zero almost three times faster than it learns the identity function.</p>
 <h2 id="A-less-minimal-experiment">A less minimal experiment<a class="anchor-link" href="#A-less-minimal-experiment">&#182;</a></h2><p>At this point you might not be convinced that theses observations from the extreme minimal setting extrapolate to more complex settings with larger inputs and more than one layer with more parameters. To check this I ran a similar experiment but with a full 2-layer ResNet block and 512px images as input. The code for this experiment is available <a href="https://nbviewer.jupyter.org/github/a-martyn/resnet/blob/master/docs/notebooks/resnet_membrane_demo.ipynb">here</a>, and the results are below.</p>
-<p><img src="../assets/membrane_results.png" alt="Membrane results"></p>
+<p><img src="./assets/membrane_results.png" alt="Membrane results"></p>
 <p>The model with a residual shortcut clearly outperforms the no-shortcut model in this setting too.</p>
 <h2 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">&#182;</a></h2><p>Why do convolutional networks learn the zero mapping more easily than the identity mapping? If we can answer this question then we can understand <em>why</em> residual shortcuts improve performance. In the minimal setting there's only two practical differences I can think of:</p>
 <ol>
@@ -13682,7 +13682,7 @@ $$l = \frac{\sum_{i=1}^{n}|x_i - y_i|}{n}$$<ul>
 <li><strong>Target variance:</strong> In the identity setting the target is the input which differs at each training step. In the zero setting the target is identical at every step, it is always a zero matrix.</li>
 </ol>
 <p>Further investigation is needed. Intuitively, I can't see how the difference in optimal weight could be significant. My guess would be that the target variance is the cause. In the identity setting there is variance between targets at each step, and for some samples there will exist solutions that work for that specific case but that don't generalise. For example a kernel with the bottom-right value set to <code>1.0</code> performs quite well in this particular case with only one pixel in error (highlighted red).</p>
-<p><img src="../assets/NonGeneralB.jpg" alt=""></p>
+<p><img src="./assets/NonGeneralB.jpg" alt=""></p>
 <ul>
 <li>Figure 5. Example of suboptimal kernel weights for identity mapping.</li>
 </ul>
@@ -13696,6 +13696,19 @@ $$l = \frac{\sum_{i=1}^{n}|x_i - y_i|}{n}$$<ul>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
