@@ -19,30 +19,222 @@ Alan Martyn
 <div class="content">
 <h2 id="machine-learning-log">Machine Learning: Log</h2>
 <p>Day-by-day notes as I study machine learning.</p>
-<h3 id="section">66. 2018-10-23</h3>
+<h3 id="todo">Todo</h3>
+<ul>
+<li>Read: http://karpathy.github.io/2015/05/21/rnn-effectiveness/</li>
+</ul>
+<h3 id="section">96. 2019-01-04</h3>
+<p>Followed deeplearning.ai course to implement the following from scratch in Numpy:</p>
+<ul>
+<li>Recurrent Neural Network</li>
+<li>LSTM</li>
+<li>character-level language model to generate fake dinosaur names</li>
+<li>LSTM to generate Jazz music</li>
+</ul>
+<h3 id="section-1">95. 2019-01-03</h3>
+<p>HAPPY NEW YEAR!</p>
+<p>LSTM implementation:</p>
+<ul>
+<li>To warm up I worked through the lectures on Recurrent Neural Networks from Andrew Ng's deeplearning.ai</li>
+</ul>
+<p>Maths Practice: - Linear Algebra <a href="https://www.lem.ma/">Lemma</a></p>
+<h3 id="xmas-paper-reading">94. Xmas paper reading:</h3>
+<p>Next I'd like to implement a paper based upon recurrent neural network architectures. I've used Goodfellow's <em>Deep Learning</em> textbook to get acquainted with the subject. After scouting around the literature I end up reading the following papers.</p>
+<h4 id="lstm-a-search-space-odyssey-greff-schmidhuber-et-al-2017"><a href="https://arxiv.org/abs/1503.04069">LSTM: A Search Space Odyssey, (Greff, Schmidhuber et al, 2017)</a></h4>
+<p>An empirical comparison of various incarnations of the LSTM that have appeared in the literature including the gated-recurrent-unit (GRU). Schmidhuber is widely credited as being the original inventor of the 'vanilla' LSTM. This paper provides clarification on the performance differences between the LSTM and GRU as well as other common variants. Includes a novel use of the Random Forest algorithm to assess the significance of hyper-parameters which is neat.</p>
+<h4 id="regularizing-and-optimizing-lstm-language-models-merity-et-al-2017"><a href="https://arxiv.org/abs/1708.02182">Regularizing and Optimizing LSTM Language Models, (Merity et al, 2017)</a>:</h4>
+<p>Results from this paper paper are used as benchmarks by several <a href="https://github.com/RedditSota/state-of-the-art-result-for-machine-learning-problems">state-of-the-art results</a> in NLP. It describes an LSTM setup with batch normalisation and a particular optimisation setup produce significant improvement over vanilla LSTM,</p>
+<h4 id="universal-language-model-fine-tuning-for-text-classification-howard-ruder-2018"><a href="https://arxiv.org/abs/1801.06146">Universal Language Model Fine-tuning for Text Classification (Howard, Ruder, 2018)</a></h4>
+<p>The first (I think) paper to successfully describe the use of transfer-learning in NLP, known as ULMFit. Achieved SoTA before being superseded by ELMO and BERT. References the Merity paper as benchmark.</p>
+<h4 id="sim-to-real-via-sim-to-sim-data-efficient-robotic-grasping-via-randomized-to-canonical-adaptation-networks-james-et-al-2018"><a href="https://arxiv.org/abs/1812.07252">Sim-to-Real via Sim-to-Sim: Data-efficient Robotic Grasping via Randomized-to-Canonical Adaptation Networks (James et al, 2018)</a></h4>
+<p>Not an LSTM paper, but I couldn't resist. This paper combines a generative adversarial network with a DQN reinforcement learning algorithm to achieve SoTA in robotic arm control. Reinforcement learning algorithms can perform well when trained on 'canonical' images from a simulated environment with consistent lighting, textures and physics, but this performance doesn't translate to real world environments. This is known as the simulation-to-reality gap. This paper offers a novel solution by using a GAN to translate images from a randomised simulation to their canonical equivalents. It is then shown that this same GAN can be used to translate real world images to their canonical equivalent, meaning that the DQN algorithm only has to work with canonical representations and that the model can be trained on simulation data which is much cheaper to get.</p>
+<p>The authors achieve 91% grasp success by training on simulate data then 5,000 real examples (compared with 580,000 real examples for current SoTA). In a way, you could think of this as another example of transfer-learning in that the model is first trained broadly on simulated data before being fine-tuned on a few specific examples, real world in this case.</p>
+<h3 id="section-2">93. 2018-12-19</h3>
+<p>Deep Learning: <a href="https://github.com/a-martyn/resnet">Resnet Paper Implementation</a> in PyTorch - Write up <a href="https://github.com/a-martyn/resnet">results and conclusions</a> - Publish on github - First paper implementation complete!</p>
+<h3 id="section-3">92. 2018-12-18</h3>
+<p>Deep Learning: <a href="https://github.com/a-martyn/resnet">Resnet Paper Implementation</a> in PyTorch - Write up <a href="https://github.com/a-martyn/resnet">results and conclusions</a></p>
+<p>LSTM implementation: - In preparation I read though the appropriate chapter in Goodfellow and Bengio's Deep Learning textbook: &quot;Sequence Modelling: Recurrent and Recursive Nets&quot;</p>
+<h3 id="section-4">92. 2018-12-17</h3>
+<p>Deep Learning: <a href="https://github.com/a-martyn/resnet">Resnet Paper Implementation</a> in PyTorch - Discovered crucial tweak, adding batch norm <em>averaging</em> (track_running_stats=True in PyTorch). - This implementation reproduces the original paper’s observations within less than 1% of the reported test error.</p>
+<h3 id="section-5">92. 2018-12-14</h3>
+<p>Deep Learning: <a href="https://github.com/a-martyn/resnet">Resnet Paper Implementation</a> in PyTorch - Check original authors implementation. Unfortunately the CIFAR-10 model is not provided, so I'm looking at the <a href="https://github.com/KaimingHe/deep-residual-networks/blob/master/prototxt/ResNet-50-deploy.prototxt">model from the papers ImageNet experiment</a>. I notice that bias is implemented in batch norm layer, and find authors clarification on that <a href="https://github.com/KaimingHe/deep-residual-networks/issues/10">here</a> - I started writing up results at this stage so you can see results for this version of implementation <a href="https://github.com/a-martyn/resnet/blob/e0de6167574de4a6aa561a9b1350b5be99ab52b7/README.md">here</a>.</p>
+<h3 id="section-6">91. 2018-12-13</h3>
+<p>Deep Learning: <a href="https://github.com/a-martyn/resnet">Resnet Paper Implementation</a> in PyTorch - My implementation is producing a test error approximately 1% higher for the plain network baselines and a 2% increase for the residual nets. I'm missing something but not sure what... - I have a hunch that batch normalisation setup could be the cause of discrepancy, because from playing around with my implementation I notice that the configuration of batch normalisation can have a dramatic effect on results. - Review of batch normalisation theory. These lectures from Andrew Ng's deeplearning course prove useful: - https://www.youtube.com/watch?v=em6dfRxYkYU&amp;t=7s - https://www.youtube.com/watch?v=nUUqwaxLnWs - https://www.youtube.com/watch?v=5qefnAek8OA</p>
+<h3 id="section-7">90. 2018-12-12</h3>
+<p>Deep Learning: <a href="https://github.com/a-martyn/resnet">Resnet Paper Implementation</a> in PyTorch</p>
+<h3 id="section-8">89. 2018-12-11</h3>
+<p>Deep Learning: <a href="https://github.com/a-martyn/resnet">Resnet Paper Implementation</a> in PyTorch - Implement test set evaluation in training loop - Run plain net baseline training for each network size and record results</p>
+<h3 id="section-9">88. 2018-12-10</h3>
+<p>Deep Learning: <a href="https://github.com/a-martyn/resnet">Resnet Paper Implementation</a> in PyTorch</p>
+<p>Maths Practice: - Linear Algebra <a href="https://www.lem.ma/">Lemma</a></p>
+<h3 id="section-10">87. 2018-12-07</h3>
+<p>Deep Learning: <a href="https://github.com/a-martyn/resnet">Resnet Paper Implementation</a> in PyTorch</p>
+<ul>
+<li>Implemented &quot;plain network&quot; – deep neaural net withoout shortcuts – as baseline described in paper</li>
+<li>Implemented learning loop</li>
+</ul>
+<h3 id="section-11">86. 2018-12-06</h3>
+<p>Deep Learning: <a href="https://github.com/a-martyn/resnet">Resnet Paper Implementation</a> in PyTorch</p>
+<ul>
+<li>Studied original <a href="https://arxiv.org/abs/1512.03385">resnet paper</a></li>
+<li>Implemented loading and augmentation of CIFAR 10 dataset per paper in PyTorch</li>
+</ul>
+<h3 id="section-12">85. 2018-12-05</h3>
+<p>Deep Learning:</p>
+<ul>
+<li><a href="https://pytorch.org/tutorials/beginner/data_loading_tutorial.html">PyTorch: Data Loading and Processing Tutorial</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/pytorch_with_examples.html">PyTorch: Learning PyTorch with Examples</a></li>
+</ul>
+<h3 id="section-13">84. 2018-12-04</h3>
+<p>Deep Learning:</p>
+<ul>
+<li><a href="http://cs231n.github.io/">CS231n: Module 2: Convolutional Neural Networks</a> Includesa good summary of literature on ResNets which could be useful later</li>
+<li><a href="https://www.youtube.com/watch?v=_au3yw46lcg">Andrew Ng interviews Andrej Karpathy</a> Noted here that Karpathy reccomends implementing networks from scratch without framework</li>
+<li><a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html">Deep Learning with PyTorch: A 60 Minute Blitz</a></li>
+</ul>
+<h3 id="section-14">83. 2018-12-03</h3>
+<p>Deep Learning:</p>
+<ul>
+<li><a href="https://www.kaggle.com/c/human-protein-atlas-image-classification">Human Protein Atlas Image Classification Kaggle</a>: Classifying sub-cellular protein patterns in human cells:</li>
+<li>documented work so far for collaborator</li>
+<li>discussed possible next steps and ways forward</li>
+</ul>
+<h3 id="section-15">82. 2018-11-29</h3>
+<p>Deep Learning: - Fast.ai Lesson 6 – RNNs: Interpreting embeddings; RNNs from scratch - Fast.ai Lesson 7 – CNN Architecture: Resnets from scratch</p>
+<h3 id="section-16">80. 2018-11-28</h3>
+<p>Deep Learning: - Fast.ai Lesson 5 – NLP: Collaborative filtering; Inside the training loop - <a href="https://www.kaggle.com/c/human-protein-atlas-image-classification">Human Protein Atlas Image Classification Kaggle</a>: Classifying sub-cellular protein patterns in human cells: - <strong>Leaderboard Score: 0.474 (Top 10% of 1200)</strong> - developed training loop to get a good baseline - implemented data processing scripts</p>
+<h3 id="section-17">79. 2018-11-27</h3>
+<ul>
+<li><a href="https://www.kaggle.com/c/human-protein-atlas-image-classification">Human Protein Atlas Image Classification Kaggle</a>: Classifying sub-cellular protein patterns in human cells:</li>
+<li>preprocessing</li>
+<li>setup pipeline</li>
+<li>initial model</li>
+</ul>
+<h3 id="section-18">78. 2018-11-26</h3>
+<p>Deep Learning: - Fast.ai Lesson 4 – Embeddings: Structured, time series, &amp; language models - Fast.ai Lesson 3 – Overfitting: Improving your image classifier</p>
+<p>Maths Practice: - Linear Algebra <a href="https://www.lem.ma/">Lemma</a></p>
+<h3 id="section-19">77. 2018-11-23</h3>
+<p>Deep Learning: - <a href="https://www.kaggle.com/c/plant-seedlings-classification">Plant Seedlings Kaggle</a>: Determining the species of a seedling from an image: - <strong>Leaderboard Score: 0.97858 (Top 18% of 836)</strong> - Feature engineering - Data augmentation from scratch</p>
+<ul>
+<li>Fast.ai Lesson 2 – CNNs: Convolutional neural networks applied</li>
+</ul>
+<p>Maths Practice:</p>
+<ul>
+<li>Linear Algebra <a href="https://www.lem.ma/">Lemma</a></li>
+</ul>
+<h3 id="section-20">76. 2018-11-22</h3>
+<p>Deep Learning:</p>
+<ul>
+<li><a href="https://www.kaggle.com/c/plant-seedlings-classification">Plant Seedlings Kaggle</a>: Determining the species of a seedling from an image:</li>
+<li>Baseline implementation achieves Leaderboard Score: 0.96473 (96.4% accuracy)</li>
+<li>Hyperparemeter tuning</li>
+<li>training pipeline optimisation</li>
+</ul>
+<p>Maths Practice:</p>
+<ul>
+<li>Linear Algebra <a href="https://www.lem.ma/">Lemma</a></li>
+</ul>
+<h3 id="section-21">75. 2018-11-21</h3>
+<p>Deep Learning:</p>
+<ul>
+<li>Fast.ai Lesson 1 – CNNs: Recognizing cats and dogs</li>
+<li><a href="https://www.kaggle.com/c/plant-seedlings-classification">Plant Seedlings Kaggle</a>:</li>
+<li>Setup a pipeline for classifying 14 species of plants from images of seedlings</li>
+<li>Data exploration</li>
+</ul>
+<p>Maths Practice:</p>
+<ul>
+<li>Linear Algebra <a href="https://www.lem.ma/">Lemma</a></li>
+</ul>
+<h3 id="section-22">74. 2018-11-20</h3>
+<p>Deep learning:</p>
+<ul>
+<li>Setup a remote GPU server optimised for deep learning</li>
+</ul>
+<p>Maths practice:</p>
+<ul>
+<li>Linear algebra revision: <a href="https://www.lem.ma/">Lemma</a> 1.1 Introduction</li>
+<li>Probability: I watched first few lectures from Mathmonk, but didn't find it very engaging so don't think I'l pursue that course</li>
+</ul>
+<h3 id="section-23">73. 2018-11-19</h3>
+<p>Met with study partner and planned curriculumn for studying deep learning.</p>
+<p>Set goal: - To implement in code 4-5 research papers that describe important concepts in deep-learning.</p>
+<p>Decided to: - Complete part 1 of <a href="https://course.fast.ai/">fast.ai mooc</a> as an introduction to deep learning - Learn PyTorch - Start by implementing papers that describe concepts like Reccurrent Neural Netowrks (RNNs), and LSTMs</p>
+<h3 id="section-24">72. 2018-11-09</h3>
+<p>Introduction to Statistical Learning: ch9: <strong>Support Vector Machines</strong> Conceptual:</p>
+<ul>
+<li>numpy implementation of maximal margin classifier</li>
+<li>linear and non-linear decisin boundaries</li>
+<li><a href="https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_conceptual.ipynb">Notebook: Support Vector Machines – Conceptual</a></li>
+</ul>
+<h3 id="section-25">71. 2018-11-08</h3>
+<p>Introduction to Statistical Learning: ch9: <strong>Support Vector Machines</strong> Applied:</p>
+<ul>
+<li>SVM in context of minimal linear seperation</li>
+<li>Application of SVM to real datasets</li>
+<li>reducing training time, preprocessing for SVM</li>
+<li><a href="https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_applied.ipynb">Notebook: Support Vector Machines – Applied</a></li>
+</ul>
+<h3 id="section-26">70. 2018-11-07</h3>
+<p>Introduction to Statistical Learning: ch9: <strong>Support Vector Machines</strong> Applied:</p>
+<ul>
+<li>dataset simulation</li>
+<li>SVM kernel selection</li>
+<li><a href="https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_applied.ipynb">Notebook: Support Vector Machines – Applied</a></li>
+</ul>
+<h3 id="section-27">69. 2018-11-06</h3>
+<p>Introduction to Statistical Learning: ch9: <strong>Support Vector Machines</strong> Labs:</p>
+<ul>
+<li>Tuning support vector machines</li>
+<li>ROC curves</li>
+<li>Multi-class SVM</li>
+<li><a href="https://github.com/a-martyn/ISL-python/blob/master/Notebooks/ch9_support_vector_machines_labs.ipynb">Notebook: Support Vector Machines – Labs</a></li>
+</ul>
+<h3 id="section-28">68. 2018-10-30</h3>
+<h5 id="day-2-predicting-and-preventing-bursts---data-hackathon-south-east-water">Day 2: Predicting and preventing bursts - Data Hackathon (South East Water)</h5>
+<ul>
+<li>Debugged our preprocessing pipeline</li>
+<li>Fit a model and achieved some pretty exciting results</li>
+<li>Presented our results and earned a special mention</li>
+<li>Check our <a href="https://docs.google.com/presentation/d/1kaTD7jr0DhJR7IDXVY0lVQ7-jD_r_qhhgqzK9_5nKRc/edit?usp=sharing">slides here</a></li>
+</ul>
+<h3 id="section-29">67. 2018-10-29</h3>
+<h5 id="day-1-predicting-and-preventing-bursts---data-hackathon-south-east-water">Day 1: Predicting and preventing bursts - Data Hackathon (South East Water)</h5>
+<p>I entered this <a href="https://www.eventbrite.co.uk/e/predicting-and-preventing-bursts-data-hackathon-south-east-water-tickets-51138148579#">data science competition</a> along with my study partner.</p>
+<ul>
+<li>Started with some initital data exploration. Easily the largest dataset I've come across yet with 3 billion observations.</li>
+<li>Identified a <strong>Goal</strong>: To help the South East Water team understand:</li>
+<li>Will there be a burst tomorrow?</li>
+<li>If so, where?</li>
+<li>Designed an initial feature set with 10-day lag variables for flow by geographic area</li>
+<li>Set about pre-processing</li>
+<li>Hit some scale issues to work around</li>
+<li>Lef pre-processing running over night</li>
+</ul>
+<h3 id="section-30">66. 2018-10-23</h3>
 <p>Introduction to Statistical Learning: ch8: <strong>Tree-Based Methods</strong> Applied:</p>
 <ul>
 <li>Comparison of tree based methods with KNN, regression and the lasso.</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_applied.ipynb">Notebook: ch8_tree_based_methods_applied.ipynbb</a></li>
 </ul>
-<h3 id="section-1">65. 2018-10-22</h3>
+<h3 id="section-31">65. 2018-10-22</h3>
 <p>Introduction to Statistical Learning: ch8: <strong>Tree-Based Methods</strong> Applied:</p>
 <ul>
 <li>Application of tree based methods – including Tree Pruning, Bagging, Random Forest, Boosting – to various datasets</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_applied.ipynb">Notebook: ch8_tree_based_methods_applied.ipynbb</a></li>
 </ul>
-<h3 id="section-2">64. 2018-10-19</h3>
+<h3 id="section-32">64. 2018-10-19</h3>
 <p>Introduction to Statistical Learning: ch8: <strong>Tree-Based Methods</strong> Labs:</p>
 <ul>
 <li>Review of tree based methods including Tree Pruning, Bagging, Random Forest, Boosting</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch8_tree_based_methods_labs.ipynb">Notebook: ch8_tree_based_methods_labs.ipynb</a></li>
 </ul>
-<h3 id="section-3">63. 2018-10-18</h3>
+<h3 id="section-33">63. 2018-10-18</h3>
 <p>Introduction to Statistical Learning: ch7: <strong>Moving Beyond Linearity</strong> Applied:</p>
 <ul>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch7_moving_beyond_linearity_applied.ipynb">Notebook: ch7_moving_beyond_linearity_applied.ipynb</a></li>
 </ul>
-<h3 id="section-4">62. 2018-10-17</h3>
+<h3 id="section-34">62. 2018-10-17</h3>
 <p>Introduction to Statistical Learning: ch7: <strong>Moving Beyond Linearity</strong> Applied:</p>
 <ul>
 <li>GAMs</li>
@@ -50,7 +242,7 @@ Alan Martyn
 <li>comparison of backfitting and multivariate OLS in simulated setting</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch7_moving_beyond_linearity_applied.ipynb">Notebook: ch7_moving_beyond_linearity_applied.ipynb</a></li>
 </ul>
-<h3 id="section-5">61. 2018-10-16</h3>
+<h3 id="section-35">61. 2018-10-16</h3>
 <p>Introduction to Statistical Learning: ch7: <strong>Moving Beyond Linearity</strong> Applied:</p>
 <ul>
 <li>Analysis of Variance (ANOVA)</li>
@@ -61,7 +253,7 @@ Alan Martyn
 <li>natural spline regression</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch7_moving_beyond_linearity_applied.ipynb">Notebook: ch7_moving_beyond_linearity_applied.ipynb</a></li>
 </ul>
-<h3 id="section-6">60. 2018-10-15</h3>
+<h3 id="section-36">60. 2018-10-15</h3>
 <p>Introduction to Statistical Learning: ch7: <strong>Moving Beyond Linearity</strong> Lab:</p>
 <ul>
 <li>Ch7 Lab</li>
@@ -72,14 +264,14 @@ Alan Martyn
 <li>comparison of GAM configurations with ANOVA</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch7_moving_beyond_linearity_labs.ipynb">Notebook: ch7_moving_beyond_linearity_labs.ipynb</a></li>
 </ul>
-<h3 id="section-7">59. 2018-10-12</h3>
+<h3 id="section-37">59. 2018-10-12</h3>
 <p>Introduction to Statistical Learning: ch6: <strong>Linear Model Selection and Regularization</strong> Applied:</p>
 <ul>
 <li>Analysis to compare linear models</li>
 <li>Ch7 Reading</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_applied.ipynb">Notebook: ch6_linear_model_selection_and_regularisation_applied.ipynb</a></li>
 </ul>
-<h3 id="section-8">58. 2018-10-11</h3>
+<h3 id="section-38">58. 2018-10-11</h3>
 <p>Introduction to Statistical Learning: ch6: <strong>Linear Model Selection and Regularization</strong> Applied:</p>
 <ul>
 <li>detailed comparison of model selection techniques in context <strong>real dataset</strong> to predict the number of applications received by U.S. colleges. Techniques considered:</li>
@@ -90,7 +282,7 @@ Alan Martyn
 <li>PLS</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_applied.ipynb">Notebook: ch6_linear_model_selection_and_regularisation_applied.ipynb</a></li>
 </ul>
-<h3 id="section-9">57. 2018-10-11</h3>
+<h3 id="section-39">57. 2018-10-11</h3>
 <p>Introduction to Statistical Learning: ch6: <strong>Linear Model Selection and Regularization</strong> Applied:</p>
 <ul>
 <li>Detailed comparison of model selection techniques in a <strong>simulated</strong> setting. Techniques considered:
@@ -103,7 +295,7 @@ Alan Martyn
 </ul></li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_applied.ipynb">Notebook: ch6_linear_model_selection_and_regularisation_applied.ipynb</a></li>
 </ul>
-<h3 id="section-10">56. 2018-10-10</h3>
+<h3 id="section-40">56. 2018-10-10</h3>
 <p>Completed Introduction to Statistical Learning: ch6: <strong>Linear Model Selection and Regularization</strong> Labs:</p>
 <ul>
 <li>implemented principle components analysis</li>
@@ -112,7 +304,7 @@ Alan Martyn
 <li>comparison of principle components regression partial least squares in predicting salaries of baseball players</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_labs.ipynb">Notebook: ch6_linear_model_selection_and_regularisation_labs.ipynb</a></li>
 </ul>
-<h3 id="section-11">55. 2018-10-09</h3>
+<h3 id="section-41">55. 2018-10-09</h3>
 <p>Working through Introduction to Statistical Learning: ch6: <strong>Linear Model Selection and Regularization</strong> Labs:</p>
 <ul>
 <li>implemented backward stepwise selection from scratch</li>
@@ -122,7 +314,7 @@ Alan Martyn
 <li>Lab 2: comparison of ridge regression and the lasso with k-fold cross validation</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_labs.ipynb">Notebook: ch6_linear_model_selection_and_regularisation_labs.ipynb</a></li>
 </ul>
-<h3 id="section-12">54. 2018-10-08</h3>
+<h3 id="section-42">54. 2018-10-08</h3>
 <p>Read an Introduction to Statistical Learning: ch7: <strong>Moving Beyond Linearity</strong>.</p>
 <p>Working through chapter 6 Lab 1: Subset Selection Methods:</p>
 <ul>
@@ -130,7 +322,7 @@ Alan Martyn
 <li>implemented forward stepwise selection from scratch</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_labs.ipynb">Notebook: ch6_linear_model_selection_and_regularisation_labs.ipynb</a></li>
 </ul>
-<h3 id="section-13">53. 2018-09-28</h3>
+<h3 id="section-43">53. 2018-09-28</h3>
 <p>ISL considers ridge regression and the Lasso from both the frequentist and the bayesian perspectives. Although ISL has introduced bayesian statistics and some probability theory, there is clearly much more to this subject.</p>
 <p>Researched: what are the best resources for learning probability theory in more depth?</p>
 <ul>
@@ -146,7 +338,7 @@ Alan Martyn
 <li>Recommendation: https://www.reddit.com/r/statistics/comments/85hxgt/bayesian_statistics_courserecommendation/</li>
 </ul></li>
 </ul>
-<h3 id="section-14">52. 2018-09-27</h3>
+<h3 id="section-44">52. 2018-09-27</h3>
 <p>An Introduction to Statistical Learning: ch6: <strong>Linear Model Selection and Regularization</strong>.</p>
 <p>Completed conceptual exercises:</p>
 <ul>
@@ -155,11 +347,11 @@ Alan Martyn
 <li>coefficient penalties</li>
 <li><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch6_linear_model_selection_and_regularisation_conceptual.ipynb">Notebook: ch6_linear_model_selection_and_regularisation_conceptual.ipynb</a></li>
 </ul>
-<h3 id="section-15">51. 2018-09-26</h3>
+<h3 id="section-45">51. 2018-09-26</h3>
 <p>Revision day. Met with study partner and reviewed our solutions to all exercises from chapters 3-5 of An Introduction to Statistical Learning. Discussed and compared intuitions.</p>
-<h3 id="section-16">50. 2018-09-25</h3>
+<h3 id="section-46">50. 2018-09-25</h3>
 <p>Read ISL ch5: Linear Model Selection and Regularization.</p>
-<h3 id="section-17">49. 2018-09-20</h3>
+<h3 id="section-47">49. 2018-09-20</h3>
 <p>An Introduction to Statistical Learning: ch5: <strong>Resampling Methods</strong>.</p>
 <p>Working through applied exercises:<a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch5_resampling_methods_applied.ipynb">My notebook</a></p>
 <ul>
@@ -168,7 +360,7 @@ Alan Martyn
 <li>compared bias variance trade-offs of validation approaches</li>
 <li>bootstrap advanced applications</li>
 </ul>
-<h3 id="section-18">48. 2018-09-19</h3>
+<h3 id="section-48">48. 2018-09-19</h3>
 <p>An Introduction to Statistical Learning: ch5: <strong>Resampling Methods</strong>.</p>
 <p>Working through applied exercises: <a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch5_resampling_methods_applied.ipynb">My notebook</a></p>
 <ul>
@@ -177,7 +369,7 @@ Alan Martyn
 <li>implemented bootstrap from scratch</li>
 <li>bootstrap (to estimate standard errors for logistic regression)</li>
 </ul>
-<h3 id="section-19">47. 2018-09-18</h3>
+<h3 id="section-49">47. 2018-09-18</h3>
 <p>An Introduction to Statistical Learning: ch5: <strong>Resampling Methods</strong>.</p>
 <p>Completed conceptual exercises: <a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch5_resampling_methods_conceptual.ipynb">My notebook</a></p>
 <ul>
@@ -186,9 +378,9 @@ Alan Martyn
 <li>k-fold cross validation</li>
 <li>comparison of validation approaches</li>
 </ul>
-<h3 id="section-20">46. 2018-09-17</h3>
+<h3 id="section-50">46. 2018-09-17</h3>
 <p>Studied Introduction to Statistical Learning: ch5: <strong>Resampling Methods</strong>.</p>
-<h3 id="section-21">45. 2018-09-16</h3>
+<h3 id="section-51">45. 2018-09-16</h3>
 <p>An Introduction to Statistical Learning: ch4: <strong>Classification</strong>.</p>
 <p>Completed applied exercises: <a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch4_classification_applied.ipynb">My notebook</a></p>
 <ul>
@@ -199,7 +391,7 @@ Alan Martyn
 <li>Comparison of methods</li>
 <li>log transforms</li>
 </ul>
-<h3 id="section-22">44. 2018-09-15</h3>
+<h3 id="section-52">44. 2018-09-15</h3>
 <p>An Introduction to Statistical Learning: ch4: <strong>Classification</strong>.</p>
 <p>Working through applied exercises: <a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch4_classification_applied.ipynb">My notebook</a></p>
 <ul>
@@ -207,7 +399,7 @@ Alan Martyn
 <li>Confusion matrix</li>
 <li>Logistic regression statistics, false positive, true negatives etc.</li>
 </ul>
-<h3 id="section-23">43. 2018-09-14</h3>
+<h3 id="section-53">43. 2018-09-14</h3>
 <p>An Introduction to Statistical Learning: ch4: <strong>Classification</strong>.</p>
 <p>Completed conceptual exercises: <a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch4_classification_conceptual.ipynb">My notebook</a></p>
 <ul>
@@ -219,23 +411,23 @@ Alan Martyn
 <li>Bayes theorem</li>
 <li>odds</li>
 </ul>
-<h3 id="section-24">42. 2018-09-13</h3>
+<h3 id="section-54">42. 2018-09-13</h3>
 <p>An Introduction to Statistical Learning: ch3: <strong>Linear Regression</strong>.</p>
 <p>Completed applied exercises:</p>
 <p><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_practical.ipynb">My notebook</a></p>
-<h3 id="section-25">41. 2018-09-12</h3>
+<h3 id="section-55">41. 2018-09-12</h3>
 <p>An Introduction to Statistical Learning: ch3: <strong>Linear Regression</strong>.</p>
 <p>Working through applied exercises:</p>
 <p><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_practical.ipynb">My notebook</a></p>
-<h3 id="section-26">40. 2018-09-10</h3>
+<h3 id="section-56">40. 2018-09-10</h3>
 <p>An Introduction to Statistical Learning: ch3: <strong>Linear Regression</strong>.</p>
 <p>Working through applied exercises:</p>
 <p><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_practical.ipynb">My notebook</a></p>
-<h3 id="section-27">39. 2018-09-8</h3>
+<h3 id="section-57">39. 2018-09-8</h3>
 <p>An Introduction to Statistical Learning: ch3: <strong>Linear Regression</strong>.</p>
 <p>Working through applied exercises:</p>
 <p><a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_practical.ipynb">My notebook</a></p>
-<h3 id="section-28">38. 2018-09-07</h3>
+<h3 id="section-58">38. 2018-09-07</h3>
 <p>Working on practical exercises from chapter 3 of An Introduction to Statistical Learning. <a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_practical.ipynb">My notebook</a>.</p>
 <ul>
 <li>implemented several key statistics from scratch to bolster my understanding</li>
@@ -243,11 +435,11 @@ Alan Martyn
 </ul>
 <p>Thoughts:</p>
 <p>I'm suprised how much work I had to do to emulate R's lm().plot() functionality. The resultant plots seem really useful, particularly as they provide insight for multivariate models, and anomaly detection in that context. Perhaps worth a blog post to see if useful to others?</p>
-<h3 id="section-29">37. 2018-09-06</h3>
+<h3 id="section-59">37. 2018-09-06</h3>
 <p>Completed exercises on conceptual topics from chapter 3 of An Introduction to Statistical Learning. <a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch3_linear_regression_conceptual.ipynb">My notebook</a>.</p>
 <p>Thoughts:</p>
 <p>I've noticed that there are different mathematical approaches to linear regression. Hastie and Tibshirani's notation includes a lot of summations, perhaps to avoid linear algebra being pre-requisite, but I find the vectorised forms more intuitive.</p>
-<h3 id="section-30">36. 2018-09-05</h3>
+<h3 id="section-60">36. 2018-09-05</h3>
 <p>Study Linear Regression, chapter 3 of <a href="http://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning</a>.</p>
 <ul>
 <li>Multiple Linear Regression</li>
@@ -263,21 +455,21 @@ Alan Martyn
 <li>Outlier detection by residual plots p97</li>
 </ul>
 <p>Had an idea for project using cluster analysis / unsupervised methods for classification of head impact during sport. I've ordered a 9-DOF sensor to hook up to my arduino and gather some data.</p>
-<h3 id="section-31">35. 2018-09-03</h3>
+<h3 id="section-61">35. 2018-09-03</h3>
 <p>Study Linear Regression, chapter 3 of <a href="http://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning</a>.</p>
 <ul>
 <li>Simple Linear Regression</li>
 <li>Multiple Linear Regression</li>
 </ul>
 <p>Cross referenced with <a href="https://see.stanford.edu/Course/CS229/54">Stanford CS229 lecture 2</a> and Murphy's <em>Machine Learning: A Probabilistic Perspective</em>.</p>
-<h3 id="section-32">34. 2018-09-02</h3>
+<h3 id="section-62">34. 2018-09-02</h3>
 <p>Today I did the applied exercises from chapter 2 of ISL. Here's <a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch2_statistical_learning.ipynb">my notebook</a>. Good exercise in preprocessing and exploration of datasets, sharpening up in Pandas and Matplotlib / Seaborn.</p>
-<h3 id="section-33">33. 2018-09-01</h3>
+<h3 id="section-63">33. 2018-09-01</h3>
 <ul>
 <li>Read chapters 1 &amp; 2 of <a href="http://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning</a> (ISL)</li>
 <li>Completed <a href="https://nbviewer.jupyter.org/github/a-martyn/ISL-python/blob/master/Notebooks/ch2_statistical_learning.ipynb">conceptual exercises</a> from book</li>
 </ul>
-<h3 id="section-34">33. 2018-08-31</h3>
+<h3 id="section-64">33. 2018-08-31</h3>
 <p>Next up a tour of supervised learning techniques. I've decided to take the Stanford course on <a href="https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/about">Statistical Learning</a> by Trevor Hastie and Robert Tibshirani. My worfklow for each chapter will be:</p>
 <ol style="list-style-type: decimal">
 <li>Watch video lectures and complete online quizzes</li>
@@ -285,7 +477,7 @@ Alan Martyn
 <li>Complete exercises from book</li>
 </ol>
 <p>Today I completed the video lectures for chapters 1 sand 2.</p>
-<h3 id="section-35">32. 2018-08-28</h3>
+<h3 id="section-65">32. 2018-08-28</h3>
 <p>Kaggle Competition – <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a></p>
 <ul>
 <li>implemented Lasso regularisation model to gain 400 places in leaderboard</li>
@@ -337,7 +529,7 @@ Alan Martyn
 <p>This Kaggle competition has been excellent opportunity to learn about the more practical aspects of machine learning beyond algorithms. Feature engineering and Cross-validation have stuck out as important areas that are not well covered by theoretical study.</p>
 <p>I feel like I've taken my Kaggle score as far as I can using a simple linear model and feature engineering. Next I'm going to learn about more advanced models and techniques.</p>
 <p>See my <a href="https://www.kaggle.com/alanmartyn/linear-regression">notebook here</a></p>
-<h3 id="section-36">31. 2018-08-27</h3>
+<h3 id="section-66">31. 2018-08-27</h3>
 <p>Kaggle Competition – <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a></p>
 <p>Today I looked at improving my results by removing anomalies from my training set. My hypothesis was that removing anomalies would allow my model to better fit the majority of data, at the cost of a worst fit for anomalies. My assumption here was that the error in fitting anomalies would be outweighed by better fit for majority of datapoints.</p>
 <ul>
@@ -382,7 +574,7 @@ Alan Martyn
 </tbody>
 </table>
 <p>See my <a href="https://www.kaggle.com/alanmartyn/linear-regression">notebook here</a></p>
-<h3 id="section-37">30. 2018-08-26</h3>
+<h3 id="section-67">30. 2018-08-26</h3>
 <p>Kaggle Competition – <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a></p>
 <p>Today I focused on minimising exponential characteristics in to make relationships in the dataset more linear. This allows my simple linear model to fit with reduced error. This jumped me 200 places in the leaderboard.</p>
 <table>
@@ -413,7 +605,7 @@ Alan Martyn
 </tbody>
 </table>
 <p>See my <a href="https://www.kaggle.com/alanmartyn/linear-regression">notebook here</a></p>
-<h3 id="section-38">29. 2018-08-25</h3>
+<h3 id="section-68">29. 2018-08-25</h3>
 <p>Kaggle Competition – <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a></p>
 <table>
 <thead>
@@ -440,7 +632,7 @@ Alan Martyn
 <li>Read <a href="https://jakevdp.github.io/PythonDataScienceHandbook/05.06-linear-regression.html">In Depth: Linear Regression</a> from VanderPlas' book</li>
 </ul>
 <p>See my <a href="https://www.kaggle.com/alanmartyn/linear-regression">notebook here</a></p>
-<h3 id="section-39">28. 2018-08-24</h3>
+<h3 id="section-69">28. 2018-08-24</h3>
 <p>Kaggle Competition – <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a></p>
 <ul>
 <li>Reviewed Andrew NG's advice on model validation</li>
@@ -454,7 +646,7 @@ Alan Martyn
 <p>Cross-validation like feature engineering is another topic that seems critical to practical application of ML, yet is not widely covered in the literature I've seen so far. The current 1 Kaggler, Shubin Dai (bestfitting), puts a lot of weight on designing good CVs as part of his approach described in this <a href="http://blog.kaggle.com/2018/05/07/profiling-top-kagglers-bestfitting-currently-1-in-the-world/">interview</a></p>
 <p>During my own experimentation I observed surprisingly high variation between different approaches.</p>
 <p>See my <a href="https://www.kaggle.com/alanmartyn/linear-regression">notebook here</a></p>
-<h3 id="section-40">27. 2018-08-23</h3>
+<h3 id="section-70">27. 2018-08-23</h3>
 <p>Today I focused on visualisation and feature engineering of data for the Kaggle competition – <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a></p>
 <ul>
 <li>indexed data by statistical data types using Pandas</li>
@@ -469,7 +661,7 @@ Alan Martyn
 <p>Content on feature engineering in books and online seems light. Wondering if there's opportunities for improved tooling here too?</p>
 <p>This <a href="https://vimeo.com/274274744">talk by Andrej Karpathy</a> from Tesla, gives an interesting insight on the importance of feature engineering at Tesla.</p>
 <p>See my <a href="https://www.kaggle.com/alanmartyn/linear-regression">notebook here</a></p>
-<h3 id="section-41">26. 2018-08-22</h3>
+<h3 id="section-71">26. 2018-08-22</h3>
 <p>Today I started the Kaggle competition – <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a></p>
 <p>To get up and running I:</p>
 <ul>
@@ -483,14 +675,14 @@ Alan Martyn
 </ul>
 <p>Thoughts:</p>
 <p>The Kaggle dataset is not as 'clean' as I imagined. There is plenty of inconsistency in the formatting and labelling that will need to tackled before it can be passed to a model. I'm going to segment real, count, ordinal and categorical data in case I need to process them separately.</p>
-<h3 id="section-42">25. 2018-08-21</h3>
+<h3 id="section-72">25. 2018-08-21</h3>
 <p>Meet with study buddy to revise entire <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a> course. Focus on areas we found most difficult. We cover all items under 'Revisit' in this data log. It was really useful to talk through and test each others understanding, felt like I came away with much improved intution in key areas such as numpy broadcasting, inner products and Taylor Series Approximation.</p>
 <p>Our search for suitable London housing datasets was fruitless. The Land Registry datasets include sale prices but not much else, we conclude that best approach would be to scrape archived classified listings.</p>
 <p>We decide to start by tackling the <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques">House Prices: Advanced Regression Techniques</a> Kaggle competition.</p>
-<h3 id="section-43">24. 2018-08-17</h3>
+<h3 id="section-73">24. 2018-08-17</h3>
 <p>Having completed the <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a> course, I met up with my study buddy to do plan next steps and revise the completed course.</p>
 <p>We decide to do some applied work next week to predict house prices. Ideally we'd like to predict London house prices, so we decide to look for datasets.</p>
-<h3 id="section-44">23. 2018-08-16</h3>
+<h3 id="section-74">23. 2018-08-16</h3>
 <p><strong>COMPLETE</strong> <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Principal Component Analysis</strong> week 4 including:</p>
 <ul>
 <li>Programming assignment:
@@ -500,7 +692,7 @@ Alan Martyn
 <li>optimisation of PCA for highly dimensional datasets</li>
 </ul></li>
 </ul>
-<h3 id="section-45">22. 2018-08-15</h3>
+<h3 id="section-75">22. 2018-08-15</h3>
 <p><a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Principal Component Analysis</strong> week 4 including:</p>
 <ul>
 <li>Vector spaces</li>
@@ -514,7 +706,7 @@ Alan Martyn
 <ul>
 <li>Chain rule practice q.2</li>
 </ul>
-<h3 id="section-46">21. 2018-08-14</h3>
+<h3 id="section-76">21. 2018-08-14</h3>
 <p><a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Principal Component Analysis</strong> week 3 including:</p>
 <ul>
 <li>Projection onto 1D subspaces (general case using inner products)</li>
@@ -527,7 +719,7 @@ Alan Martyn
 <li>linear regression for boston house prices</li>
 </ul></li>
 </ul>
-<h3 id="section-47">20. 2018-08-13</h3>
+<h3 id="section-77">20. 2018-08-13</h3>
 <p><a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Principal Component Analysis</strong> week 2 including:</p>
 <ul>
 <li>Basis vectors revision</li>
@@ -540,7 +732,7 @@ Alan Martyn
 <li>Programming Assignment: Inner products and angles def pairwise_distance_matrix(X, Y)</li>
 <li>What areas of this programming assignement required inner product generalisations?</li>
 </ul>
-<h3 id="section-48">19. 2018-08-12</h3>
+<h3 id="section-78">19. 2018-08-12</h3>
 <ul>
 <li>I took the first 8 lectures in Pavel Grinfeld's <a href="https://www.youtube.com/playlist?list=PLlXfTHzgMRULZfrNCrrJ7xDcTjGr633mm&amp;disable_polymer=true">inner product course</a></li>
 <li>Mathematics for Machine Learning](https://www.coursera.org/specializations/mathematics-machine-learning): <strong>Principal Component Analysis</strong> week 2 including:
@@ -554,7 +746,7 @@ Alan Martyn
 <ul>
 <li>Inner product: distances between vectors: I can't replicate Deisenroth's result <span class="citation">@3:00</span>, 12^0.5</li>
 </ul>
-<h3 id="section-49">18. 2018-08-11</h3>
+<h3 id="section-79">18. 2018-08-11</h3>
 <p>Studied course <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Principal Component Analysis</strong> week 1 &amp; 2 including:</p>
 <ul>
 <li>programming assignment to calculate mean and covariance of <a href="http://scikit-learn.org/stable/datasets/olivetti_faces.html">The Olivetti Faces</a> dataset
@@ -570,7 +762,7 @@ Alan Martyn
 <li><a href="https://www.youtube.com/watch?v=8M6eo3j7jO4">Identifying inner products</a></li>
 </ul></li>
 </ul>
-<h3 id="section-50">17. 2018-08-10</h3>
+<h3 id="section-80">17. 2018-08-10</h3>
 <p>Started course <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Principal Component Analysis</strong> week 1 including:</p>
 <ul>
 <li>mean of high dimensional datasets</li>
@@ -579,7 +771,7 @@ Alan Martyn
 <li>covariance</li>
 </ul>
 <p>I read the Principle Compenent Analysis section in Hastie &amp; Tibshirani's Introduction to Statistical Learning textbook.</p>
-<h3 id="section-51">16. 2018-08-08</h3>
+<h3 id="section-81">16. 2018-08-08</h3>
 <p><strong>Completed course:</strong> <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Multivariate Calculus</strong></p>
 <p>Studied week 6 including:</p>
 <ul>
@@ -589,7 +781,7 @@ Alan Martyn
 <li>Programming assignment: fitting the distribution of height data</li>
 </ul>
 <p>I listened to <a href="https://robohub.org/talking-machines-history-of-machine-learning-w-geoffrey-hinton-yoshua-bengio-yann-lecun/">The History of Machine Learning from the Inside Out</a> podcast where Geoffrey Hinton, Yoshua Bengio and Yann LeCun discuss motivations for deep-learning before state of the art results. Useful terminology, and interesting to hear their emphsasis on unsupervised learning as the area for future advances.</p>
-<h3 id="section-52">15. 2018-08-07</h3>
+<h3 id="section-82">15. 2018-08-07</h3>
 <p>Studied <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Multivariate Calculus</strong> week 5 including:</p>
 <ul>
 <li>Gradient descent strategies</li>
@@ -600,7 +792,7 @@ Alan Martyn
 <p>Great fun experimenting with gradient descent methods in the exercises. I submitted a proposal to the course forums for a gradient descent method that seems more robust to steep sided gulleys and shallow gradients. Coursework is starting to give me a good orientation for Jupyter notebooks, scipy, and numpy.</p>
 <p>I wanted more detail on constrained optimisation so I also took the Khan Academy course, <a href="https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/lagrange-multipliers-and-constrained-optimization/v/constrained-optimization-introduction">Lagrange multipliers and constrained optimization</a>, which taught me about The Lagrangian and also steps through the proofs.</p>
 <p>I finished the first chapter of Kevin Murphy's Machine Learning book.</p>
-<h3 id="section-53">14. 2018-08-06</h3>
+<h3 id="section-83">14. 2018-08-06</h3>
 <p>Studied <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Multivariate Calculus</strong> week 4 + 5 including:</p>
 <ul>
 <li>Linearisation revision</li>
@@ -613,7 +805,7 @@ Alan Martyn
 <li>week 4 / 2D Taylor series / q4 improve notes on linearisation, and ask forum question</li>
 <li>week 4 / Taylor Series Assessment / q4, why is f(x) = (x/2)^2​ sin(2x)/2 odd? Why are functions that are same when rotated 180deg about the origin odd?</li>
 </ul>
-<h3 id="section-54">13. 2018-08-05</h3>
+<h3 id="section-84">13. 2018-08-05</h3>
 <p>Studied <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Multivariate Calculus</strong> week 4 including:</p>
 <ul>
 <li>Taylor Series</li>
@@ -626,10 +818,10 @@ Alan Martyn
 <ul>
 <li>week 4 / Taylor series - Special cases / Q4 – why is f(x) = 1/(1+x)^2 discontinuous in the complex plane?</li>
 </ul>
-<h3 id="section-55">12. 2018-08-04</h3>
+<h3 id="section-85">12. 2018-08-04</h3>
 <p>Studied <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Multivariate Calculus</strong> week 4 including: - Building approximate functions - Power series</p>
 <p>Implemented backpropagation in Python with Numpy. That's the 3rd time I've implemented backprop now, having a detailed knowledge of the chain rule was really useful. This time around I feel like I've grokked it.</p>
-<h3 id="section-56">11. 2018-08-03</h3>
+<h3 id="section-86">11. 2018-08-03</h3>
 <p>Studied <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Multivariate Calculus</strong> week 3 including:</p>
 <ul>
 <li>Multivariate chain rule</li>
@@ -639,7 +831,7 @@ Alan Martyn
 </ul>
 <p>Great to revisit the basic neural nets example with the linear algebra and calculus principles built up so far. Satisfying to combine linear algebra with the chain rule.</p>
 <p>I read the article <a href="http://www.fast.ai/2018/07/23/auto-ml-3/">Google's AutoML: Cutting Through the Hype</a> which offers an interesting perspective on the commercialisation of ML tech, some potential pitfalls for big companies in this area.</p>
-<h3 id="section-57">10. 2018-08-02</h3>
+<h3 id="section-87">10. 2018-08-02</h3>
 <p>Studied <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Multivariate Calculus</strong> week 2 including:</p>
 <ul>
 <li>Partial differentiation</li>
@@ -649,19 +841,19 @@ Alan Martyn
 <p>Pretty cool to start combining linear algebra with calculus here. Looking at applications of the Jacobian and the Hessian to gradient descent problems – like the saddle problem – is a great motivator.</p>
 <p>I read the paper <a href="https://www.nature.com/articles/s41746-018-0029-1">Scalable and accurate deep learning with electronic health records</a> that reports on Google's latest work applying ML in healthcare. Looks like they’ve improved upon previous predictions by about 10% accuracy, but the thing that is most interesting is how they've achieved this without need for laborious cleaning and pre-processing of data. They have developed a pipeline that takes raw unstructured data like handwritten notes as input, and outputs some more structure FHIR compliant output.</p>
 <p>There's also a ux that allows doctors to inspect what parts of a given health record were most significant in generating the prediction, a step away from black-box characteristics. Finally, three different models are used (RNN, LSTM, Gradient Boosting), they are able to select the most appropriate model for a particular context using a method called Ensembling.</p>
-<h3 id="section-58">9. 2018-08-01</h3>
+<h3 id="section-88">9. 2018-08-01</h3>
 <p>I met up with my study buddy to discuss progress. We decided to focus primarily on theoretical track for next 2 weeks to get foundational maths in place. Up until now we have found it difficult to split away from that track, and the content feels critical to more applied study.</p>
 <p>I started the <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: <strong>Multivariate Calculus</strong> 6 week course.</p>
 <p>Revised differentiation basics including Product Rule, Chain Rule, and practice exercises.</p>
 <p>I got some advice from friends on best practices for self-directed study. I'm now separating my notes into two notebooks: 1) clean revision notes 2) messy exercise notes. Each morning I now reinforce my understanding by recalling concepts covered the previous day, I then review my notes as reinforcement. I'll also start revisiting the harder exercise questions as further reinforcement.</p>
-<h3 id="section-59">8. 2018-07-31</h3>
+<h3 id="section-89">8. 2018-07-31</h3>
 <p>I completed the <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: Linear algebra course, completing final exam.</p>
 <p>I went back an reviewed some of the principles covered in more detail, by reviewing topics on Khan Academy including: <a href="https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/matrices-elimination/v/matrices-reduced-row-echelon-form-1">reduced row echelon form</a>, rank of matrix, calculating determinants in the general case and so on.</p>
 <p><strong>Thoughts:</strong></p>
 <p>There's definitely more to learn about Linear Algebra than could be covered in the Imperial course, but it has given me a good sense of orientation and a desire to continue study in this area. My additional studies on Khan Academy have closed the loop on some areas I was intrigued by such as rref, and rank.</p>
-<h3 id="section-60">7. 2018-07-30</h3>
+<h3 id="section-90">7. 2018-07-30</h3>
 <p><a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: Linear algebra course, covered: - study of eigenvectors - implementation of Google-esque PageRank algorithm which finds largest eigenvector with power method</p>
-<h3 id="section-61">6. 2018-07-29</h3>
+<h3 id="section-91">6. 2018-07-29</h3>
 <ul>
 <li><a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: Linear algebra. Covered:
 <ul>
@@ -686,7 +878,7 @@ Alan Martyn
 <p>A heads down day studying linear algebra. The exams provide a lot of exercise which really drive things home. Would be good to find ways to keep this knowledge fresh, perhaps longer term exercises?</p>
 <p><strong>Thoughts:</strong></p>
 <p>Great to work on some hands-on examples manipulating information with matrices. Techniques feel generally applicable. Insights on how to measure the information available in a set of vectors, e.g. are they linearly dependant? will be valuable in assessing/designing datasets.</p>
-<h3 id="section-62">5. 2018-07-28</h3>
+<h3 id="section-92">5. 2018-07-28</h3>
 <p><strong>Today's progress:</strong></p>
 <ul>
 <li>Met up with a friend who as good applied data science experience. He has built a data science team and mentored students. I learned about the skill level of people working in the field, their day-to-day work and gained insight on best practices and pitfalls.</li>
@@ -702,7 +894,7 @@ Alan Martyn
 <p>Data Science practitioners often bring with them a specific technique, perhaps based on past specialisation. It seems as though some practitioners might be inflexible in the range of techniques they will bring to bear on a problem. I wonder if it is realistic to gain a deep – or at least practical – understanding in a broad range of techniques?</p>
 <p>The ability to build a solid data processing pipeline could be an invaluable practical skill – Kafka might be worth investigating here. Maybe this is something I can collaborate with my study partner on.</p>
 <p>Possible avenues for applied projects include: - offering my services to a uni research dept. - kaggle competitions - self defined projects (we worked on some ideas here)</p>
-<h3 id="section-63">5. 2018-07-27</h3>
+<h3 id="section-93">5. 2018-07-27</h3>
 <p><strong>Today's progress:</strong></p>
 <ul>
 <li><a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: Linear algebra. Covered:
@@ -716,7 +908,7 @@ Alan Martyn
 </ul>
 <p><strong>Thoughts:</strong></p>
 <p>Continued with David Dye's course. Had to fix my front door lock so that was a distraction. The exercises in week 3 require quite laborious calculations with lots of basic arithmetic. It's important to be very careful not to cause cascading errors by dropping a minus sign or other basic arithmetic errors. I mad a few. Now I understand how to derive the inverse of a matrix and , and its given me a good intuition for what goes on when you call inv(A)!</p>
-<h3 id="section-64">4. 2018-07-26</h3>
+<h3 id="section-94">4. 2018-07-26</h3>
 <p><strong>Today's progress:</strong></p>
 <ul>
 <li>Foundational: Studied <a href="https://www.coursera.org/specializations/mathematics-machine-learning">Mathematics for Machine Learning</a>: Linear algebra. Covered:
@@ -742,7 +934,7 @@ Alan Martyn
 <p>Murphy's is a very exciting book. Is accessible, and covers some prerequisites like probability. Might be a good companion text for MMfL PCA course. Murphy considers that broadly there are 3 domains of ML; supervised learning, unsupervised learning and reinforcement learning – the latter not being covered in this book. He recognises the similarities between statistics and ML, and suggests that although topics are broadly similar the emphasis is different.</p>
 <p>Tomorrow I'd like to get at least week 3 of MMfL done and chap 1 of interview training.</p>
 <p>Finally, my grandmother's 2-year old prediction that ethics will increasingly be a defining consideration in ML applications seems to be bolstered <a href="https://www.bbc.co.uk/news/technology-44977366">today</a> as I read about biases hampering deployment of facial recognition systems. Throws up interesting questions like: How to measure bias in a dataset? How to measure bias in a model?</p>
-<h3 id="section-65">3. 2018-07-25</h3>
+<h3 id="section-95">3. 2018-07-25</h3>
 <p><strong>Today's progress:</strong></p>
 <ul>
 <li>implemented backpropagation algorithm with regularisation from scratch in Matlab to complete MLNG coursework (week 5 complete)</li>
@@ -757,7 +949,7 @@ Alan Martyn
 <p>The mathematics for machine learning course has been useful, so far I've learned a range of vector operations. The course works up from first principles which means you can get a long way by just recalling the fundamentals and working up from their. Much better suited for me than remembering a load of formulae without context. I also think it is a very good compliment for Andrew Ng's more applied course, certainly goes deeper on the math. I've dug out one of my undergrad textbooks which covers same material, K.A. Stroud's Engineering Mathematics – useful reference for exercise but I'm finding David Dyes lecture's move me along much faster.</p>
 <p>Glad to finish the backprop coursework. It was amazing to see hidden layers visualised for MNIST, I've seen those kinds of visualisations before but now I feel like I have a strong intuition on how to interpret them.</p>
 <p>Kevin Murphy's seminal book just arrived. Linear regression doesn't appear until page 219, and deep learning not until 999, so I'd better get to it.</p>
-<h3 id="section-66">2. 2018-07-24</h3>
+<h3 id="section-96">2. 2018-07-24</h3>
 <p><strong>Today's progress:</strong></p>
 <ul>
 <li>revisited Andrew Ng's ML week 5 lectures on neural nets, feedworward, and backpropagation.</li>
@@ -778,7 +970,7 @@ Alan Martyn
 <p>This will all be really useful for informing curriculum.</p>
 <p>Great to get back up and running with Ng's course. Ng recommends implementing feedforward with a <code>for</code> loop, but as I was implementing it I noticed that the loop could be removed by applying linear algebra. I decided to stick with Ng's recommendation, I think he recommends this approach because it allows you to break down the process into very small incremental steps. This proved useful during debugging, and I think it gave me a better intuition than if I'd used abstractions.</p>
 <p>When implementing feedforward I was getting an unexpected value. I was able to debug it by isolating one training example as a test case, and then using intuition to notice that the cost should not be a negative value. I didn't get as far on the coursework as I'd hoped, but feel like I'll be faster today.</p>
-<h3 id="section-67">1. 2018-07-23</h3>
+<h3 id="section-97">1. 2018-07-23</h3>
 <p><strong>Today's progress:</strong></p>
 <ul>
 <li>[x] define <a href="https://github.com/a-martyn/ml-sabbatical/tree/master/docs/005-curriculum.md">curriculum</a></li>
