@@ -8,7 +8,11 @@
 *.tfvars
 
 # terraform modules (install with terraform init)
-infrastructure/.terraform
+*.terraform
+# Ignore state according to this thread: https://github.com/hashicorp/terraform/issues/13891
+*.tfstate
+*.tfstate.backup
+infrastructure/out.plan
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
