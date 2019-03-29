@@ -1,9 +1,6 @@
 # ML Data Dirs
 input/*/data/
 
-# Ignore derived images
-output/assets
-
 # Terraform
 # creds
 *.tfvars
