@@ -1,18 +1,21 @@
-# DS store
-.DS_Store
-/.DS_Store
-/out
-.*.DS_Store
+# ML Data Dirs
+input/*/data/
 
+# Terraform
 # creds
 *.tfvars
-
 # terraform modules (install with terraform init)
 *.terraform
 # Ignore state according to this thread: https://github.com/hashicorp/terraform/issues/13891
 *.tfstate
 *.tfstate.backup
 infrastructure/out.plan
+
+# DS store
+.DS_Store
+/.DS_Store
+/out
+.*.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
