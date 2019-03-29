@@ -7,7 +7,7 @@
         "in_pth": "input/how-residual-shortcuts-speed-up-learning/how-residual-shortcuts-speed-up-learning.ipynb",
         "type": "article",
         "format": "ipynb",
-        "index": true
+        "index": false
     },
     {
         "title": "Resnet Membrane Demo",
