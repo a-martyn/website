@@ -33,7 +33,7 @@ def add2dict(key: str, val, dict: dict):
     return new_dict
 
 
-def add_out_pth(out_dir: str, index: dict):
+def add_urls(index: dict):
     """Add hrefs to index for items that are url format"""
     new_index = []
     for i in index:
@@ -51,7 +51,15 @@ def data2file(data, fp: str):
         file.write(data)
 
 
-def notebook2html(index: dict, template_fp: str, out_dir: str):
+def open_template(filepath: str):
+    """Load jinja2 template"""
+    with open(filepath) as file_:
+        template = Template(file_.read())
+    return template   
+
+
+def notebook2html(index: dict, templates: dict, host: str, out_dir: str,
+                  content_dirname: str):
     """
     Convert jupyter notebook to html. See relevant docs here:
     https://nbconvert.readthedocs.io/en/latest/nbconvert_library.html#Quick-overview
@@ -64,36 +72,43 @@ def notebook2html(index: dict, template_fp: str, out_dir: str):
 
     for item in index:
         if item.get('format') == 'ipynb':
+            
             # Render notebook as html
             in_fp = item['in_pth']
             notebook = nbformat.read(in_fp, as_version=4)
             html_exporter = HTMLExporter()
             html_exporter.template_file = 'basic'
-            body, resources = html_exporter.from_notebook_node(notebook)
-
-            filename = ntpath.basename(in_fp)[:-len('.ipynb')]
+            nb_html, resources = html_exporter.from_notebook_node(notebook)
             
-            # Add to template
-            page = {
-                'url': f'alanmartyn.com/{filename}.html',
-                'identifier': filename
-            }
-            with open(template_fp) as file_:
-                template = Template(file_.read())
-            body = template.render(notebook_html=body, page=page)
+            # Render navbar
+            navbar = templates['navbar'].render()
+            
+            # Render comments section
+            filename = ntpath.basename(in_fp)[:-len('.ipynb')]
+            page = {'url': f'{host}/{content_dirname}/{filename}.html',
+                    'identifier': filename}
+            comments = templates['comments'].render(page=page)
+
+            # Render entire page
+            html = {'navbar': navbar, 'notebook': nb_html, 'comments': comments}
+            body = templates['notebook'].render(html=html)
             
             # Write html to file
             out_fp = f'{out_dir}/{filename}.html'
             data2file(body, out_fp)
+            
             # Add html path to index
-            item_new = add2dict('out_pth', f'{filename}.html', item)
+            out_pth = f'./{content_dirname}/{filename}.html'
+            item_new = add2dict('out_pth', out_pth, item)
+        
         else:
             item_new = item
         new_index.append(item_new)
     return new_index
 
 
-def markdown2html(index: dict, out_dir: str, css_fp: str):
+def markdown2html(index: dict, templates: dict, host: str, out_dir: str, 
+                  content_dirname: str):
     """
     Convert markdown to html.
     Note: wraps pandoc so depends on root pandoc install.
@@ -106,32 +121,57 @@ def markdown2html(index: dict, out_dir: str, css_fp: str):
             # Derive output filepath
             filename = ntpath.basename(in_fp)[:-len('.md')]
             out_fp = f'{out_dir}/{filename}.html'
+            
             # Use pandoc to convert markdown to html
             # with css_fp link in header
             cmd = ['pandoc',
                 str(in_fp),
                 '-f', 'markdown',
                 '-t', 'html',
-                '-s',
-                '-o', str(out_fp),
-                '--css', str(css_fp)]
+                '-o', str(out_fp)]
             print(subprocess.check_output(cmd))
+            
+            # Load markdown
+            with open(out_fp, "r") as f:
+                markdown = f.read()
+            
+            # Render navbar
+            navbar = templates['navbar'].render() 
+            
+            # Render comments section
+            filename = ntpath.basename(in_fp)[:-len('.ipynb')]
+            page = {'url': f'{host}/{content_dirname}/{filename}.html',
+                    'identifier': filename}
+            comments = templates['comments'].render(page=page)
+
+            # Render entire page
+            html = {'navbar': navbar, 'markdown': markdown, 'comments': comments}
+            body = templates['markdown'].render(html=html)
+
+            # Write html to file
+            data2file(body, out_fp)
+
             # Add html path to index
-            item_new = add2dict('out_pth', f'{filename}.html', item)
+            out_pth = f'./{content_dirname}/{filename}.html'
+            item_new = add2dict('out_pth', out_pth, item)
         else:
             item_new = item
         new_index.append(item_new)
     return new_index
 
 
-def index2html(index: dict, template_fp: str, out_dir: str):
+def index2html(index: dict, templates: dict, out_dir: str):
     """Render index jinja template to html"""
     # Filter to only those that are set index == true
     index_visible = [i for i in index if i.get('index') == True]
-    # Render
-    with open(template_fp) as file_:
-        template = Template(file_.read())
-    body = template.render(index=index_visible)
+
+    html = {
+        # Render navbar
+        'navbar': templates['navbar'].render()
+    }
+    
+    # Render index
+    body = templates['index'].render(index=index_visible, html=html)
     data2file(body, f'{out_dir}/index.html')
     return index_visible
 

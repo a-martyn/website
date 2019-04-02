@@ -1,23 +1,23 @@
 [
     {
-        "image": "./assets/how-residual-shortcuts-speed-up-learning.jpg",
+        "image": "./content/assets/how-residual-shortcuts-speed-up-learning.jpg",
         "title": "How residual shortcuts speed up learning: a minimal demonstration",
         "blurb": "The original ResNet paper by Kaiming He et al. demonstrates the effect of residual shortcuts in large convolutional neural networks with up to 110 layers and 1.7 million parameters. In this notebook we'll explore the residual shortcut... (read more)",
         "tags": ["resnets", "convnets", "pytorch"],
-        "in_pth": "input/how-residual-shortcuts-speed-up-learning/how-residual-shortcuts-speed-up-learning.ipynb",
+        "in_pth": "input/content/how-residual-shortcuts-speed-up-learning/how-residual-shortcuts-speed-up-learning.ipynb",
         "type": "article",
         "format": "ipynb",
         "index": false
     },
     {
         "title": "Resnet Membrane Demo",
-        "in_pth": "input/resnet-membrane-demo/resnet-membrane-demo.ipynb",
+        "in_pth": "input/content/resnet-membrane-demo/resnet-membrane-demo.ipynb",
         "type": "article",
         "format": "ipynb",
         "index": false
     },
     {
-        "image": "./assets/pix2pix.jpg",
+        "image": "./content/assets/pix2pix.jpg",
         "title": "Pix2Pix: a Tensorflow/Keras implementation",
         "blurb": "Generative adversarial networks, or GANs, are an exciting method for creating data in subjective settings. This implementation of the Pix2Pix paper generates photo-realistic images of building facades from architectural diagrams.",
         "tags": ["GANs", "generative modelling", "tensorflow", "keras"],
@@ -27,7 +27,7 @@
         "index": true
     },
     {
-        "image": "./assets/awd-lstm.jpg",
+        "image": "./content/assets/awd-lstm.jpg",
         "title": "AWD-LSTM: a PyTorch implementation",
         "blurb": "An implementation of the AWD-LSTM language model in PyTorch trained on the Penn-Treebank dataset.",
         "tags": ["language modelling", "sequence modelling", "pytorch"],
@@ -37,7 +37,7 @@
         "index": true
     },
     {
-        "image": "./assets/resnet.jpg",
+        "image": "./content/assets/resnet.jpg",
         "title": "ResNet: a PyTorch implementation",
         "blurb": "An implementation of the ResNet CIFAR-10 image-classification experiment in Pytorch",
         "tags": ["vision", "convnets", "resnets", "pytorch"],
@@ -47,7 +47,7 @@
         "index": true
     },
     {
-        "image": "./assets/sew.jpg",
+        "image": "./content/assets/sew.jpg",
         "title": "Burst Forecast",
         "blurb": "Hackathon: A working prototype for South East Water that forecasts the likelihood of pipe bursts by geographic area. In collaboration with a friend we won a special mention from the judges and a small cash prize.",
         "in_pth": "https://docs.google.com/presentation/d/1kaTD7jr0DhJR7IDXVY0lVQ7-jD_r_qhhgqzK9_5nKRc/edit?usp=sharing",
@@ -56,7 +56,7 @@
         "index": true
     },
     {
-        "image": "./assets/isl-python.jpg",
+        "image": "./content/assets/isl-python.jpg",
         "title": "An Introduction to Statistical Learning",
         "blurb": "Numpy implementations of machine learning algorithms described in the classic textbook: An Introduction to Statistical Learning. Includes exercise solutions as python jupyter notebooks.",
         "in_pth": "https://github.com/a-martyn/ISL-python",
@@ -65,7 +65,7 @@
         "index": true
     },
     {
-        "image": "./assets/m4ml.jpg",
+        "image": "./content/assets/m4ml.jpg",
         "title": "Mathematics for Machine Learning",
         "blurb": "I completed this course by Imperial College covering linear algebra, calculus and probability theory with applications including linear-regression, backpropagation and PCA. Here's my course certificate.",
         "in_pth": "https://www.coursera.org/account/accomplishments/specialization/NPDCRDLHWXCH",
@@ -75,14 +75,14 @@
     },
     {
         "title": "ML Curriculum",
-        "in_pth": "input/ml-curriculum/ml-curriculum.md",
+        "in_pth": "input/content/ml-curriculum/ml-curriculum.md",
         "type": "article",
         "format": "md",
         "index": false
     },
     {
         "title": "ML Curriculum",
-        "in_pth": "input/ml-learning-log/ml-learning-log.md",
+        "in_pth": "input/content/ml-learning-log/ml-learning-log.md",
         "type": "article",
         "format": "md",
         "index": false
