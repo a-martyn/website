@@ -13,8 +13,8 @@ To articulate my work effectively requires a means to:
 
 ## To create a post
 
-1. **Setup:** create a directory to contain your post e.g. `./input/my-new-post`
-1. **Add content:** include content as markdown or jupyter notebook e.g. `./input/my-new-post/my-new-post.ipynb`
+1. **Setup:** create a directory to contain your post e.g. `./input/content/my-new-post`
+1. **Add content:** include content as markdown or jupyter notebook e.g. `./input/content/my-new-post/my-new-post.ipynb`
 1. **Index:** add your post to the index `./index,json`
 1. **Render:** to static site `python render.py`
 1. **Publish:** `git commit` and `git push` to publish via CircleCI continuous integration
@@ -23,8 +23,8 @@ To articulate my work effectively requires a means to:
 
 Optional configuration includes:
 
-- If your post requires linked assets add an alias of `./input/assets/` 
+- If your post requires linked assets add symlink to `./input/content/assets/`, remember to use full path e.g. `ln -s full/path/to/input/content/assets/ full/path/to/input/content/my-post/assets`
 - Set `"index": true` to display on homepage index, or `false` to publish page without link from index
-- Homepage images should be 700x400px and live in `./input/assets`
+- Homepage images should be 700x400px and live in `./input/content/assets`
 
 
