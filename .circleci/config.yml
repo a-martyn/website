@@ -19,7 +19,7 @@ jobs:
           name: Upload output to s3 host
           command: (aws s3 cp output s3://host-website-live --exclude "*" --include "content/*" --recursive;
                     aws s3 cp output s3://host-website-live --exclude "*" --include "vendor/*" --recursive;
-                    aws s3 cp output s3://host-website-live --exclude "*" --include "index.html")
+                    aws s3 cp output s3://host-website-live --exclude "*" --include "index.html" --recursive)
 
 
 # *****************
