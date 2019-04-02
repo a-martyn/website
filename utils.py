@@ -51,7 +51,7 @@ def data2file(data, fp: str):
         file.write(data)
 
 
-def notebook2html(index: dict, out_dir: str):
+def notebook2html(index: dict, template_fp: str, out_dir: str):
     """
     Convert jupyter notebook to html. See relevant docs here:
     https://nbconvert.readthedocs.io/en/latest/nbconvert_library.html#Quick-overview
@@ -68,7 +68,14 @@ def notebook2html(index: dict, out_dir: str):
             in_fp = item['in_pth']
             notebook = nbformat.read(in_fp, as_version=4)
             html_exporter = HTMLExporter()
+            html_exporter.template_file = 'basic'
             body, resources = html_exporter.from_notebook_node(notebook)
+
+            # Add to template
+            with open(template_fp) as file_:
+                template = Template(file_.read())
+            body = template.render(notebook_html=body)
+            
             # Write html to file
             filename = ntpath.basename(in_fp)[:-len('.ipynb')]
             out_fp = f'{out_dir}/{filename}.html'
