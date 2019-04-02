@@ -71,13 +71,18 @@ def notebook2html(index: dict, template_fp: str, out_dir: str):
             html_exporter.template_file = 'basic'
             body, resources = html_exporter.from_notebook_node(notebook)
 
+            filename = ntpath.basename(in_fp)[:-len('.ipynb')]
+            
             # Add to template
+            page = {
+                'url': f'alanmartyn.com/{filename}.html',
+                'identifier': filename
+            }
             with open(template_fp) as file_:
                 template = Template(file_.read())
-            body = template.render(notebook_html=body)
+            body = template.render(notebook_html=body, page=page)
             
             # Write html to file
-            filename = ntpath.basename(in_fp)[:-len('.ipynb')]
             out_fp = f'{out_dir}/{filename}.html'
             data2file(body, out_fp)
             # Add html path to index
