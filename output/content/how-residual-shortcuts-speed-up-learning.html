@@ -86,7 +86,7 @@
 <p><a href="https://colab.research.google.com/github/a-martyn/website/blob/master/input/how-residual-shortcuts-speed-up-learning/how-residual-shortcuts-speed-up-learning.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 <p>Recently I worked on a <a href="https://github.com/a-martyn/resnet">PyTorch implementation</a> of the <a href="https://arxiv.org/abs/1512.03385">ResNet</a> paper by Kaiming He et al. The paper demonstrates the effect of residual shortcuts in large convolutional neural networks with up to 110 layers and 1.7 million parameters. In this notebook we'll explore the residual shortcut in the extreme minimal setting with just one layer and only 9 parameters. Although not quite as cool as winning ImageNet, as ResNet did in 2016, I hope this helps to clarify residual shortcuts, what they're good for, and how to use them.</p>
 <p>Note: If you'd like to execute the code then use the "open in colab" button above, no setup required.</p>
-<p>The ResNet architecture enables 110&#8209;layer convolutional networks to outperform 20&#8209;layer networks and in 2016 achieved state-of-the-art in computer vision classification tasks. The core idea is simple, a stack of 2&#8209;3 convolutional layers circumvented by a 'shortcut' connection from input to output. These 'residual blocks' are themselves stacked together to form the ResNet model, and appear often in machine learning literature, Kaggle entries and beyond.</p>
+<p>The ResNet architecture enables 110&#8209;layer convolutional networks to outperform 20&#8209;layer networks. The core idea is simple, a stack of 2&#8209;3 convolutional layers circumvented by a 'shortcut' connection from input to output. These 'residual blocks' are themselves stacked together to form the ResNet model, and appear often in machine learning literature.</p>
 <p><img src="./assets/resnet_block.jpg" alt="Resnet Block"></p>
 <ul>
 <li>Figure 1. A ResNet block and the ResNet architecture</li>
@@ -98,7 +98,44 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Prelims">Prelims<a class="anchor-link" href="#Prelims">&#182;</a></h2>
+<h2 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a></h2><p>He et al. start from the observation that 20-layer models out performed 56-layer models on image classification tasks at that time (Fig. 2).</p>
+<p><img src="./assets/fig1.png" alt="Fig. 2"></p>
+<ul>
+<li>Figure 2. Training error (left) and test error (right) on CIFAR-10 with 20-layer and 56-layer “plain” networks.</li>
+</ul>
+<p>Why doesn't the 56-layer model perform at least as well? For example, couldn't the first 20-layers be identical to the smaller model, then the remaining layers just need to output their input. In linear algebra the function that outputs its input is the identity function.</p>
+<p>He et al. hypothesised that latter layers in the 56-layer model have a detrimental effect on performance because they struggle to learn how to pass their input through with only fine-grained adjustment. Then they asked, how might we make it easier for convolutional layers to model small changes?</p>
+<p>The ResNet solution is to provide a shortcut connection from the input of a layer to its output. The example illustrated in Fig 1. shows a shortcut across two layers.</p>
+<p>With a shortcut connection the layer learns the difference, or <strong>the residual</strong>, between input and output.</p>
+$$z = x + f(x) $$<p></p>
+<ul>
+<li>Equation 1.</li>
+</ul>
+<p>A simple change but this now means that if the optimal solution is to model the identity function then the layer learns to output a zero matrix for all inputs e.g. $f(x) = 0$. The assumption being that it is easier for a convolutional layer to learn $f(x)$ that returns zero, than it is to learn $f(x)$ that returns $x$. In the authors' words:</p>
+<blockquote><p>"We hypothesize that it is easier to optimize the residual mapping than to optimize the original, unreferenced mapping. To the extreme, if an identity mapping were optimal, it would be easier to push the residual to zero than to fit an identity mapping by a stack of nonlinear layers." - He et al. 2015</p>
+</blockquote>
+<p>Why would it be any easier for a layer to learn a function that maps to zero than it is to learn the identity function? Let's take a closer look.</p>
+<h2 id="A-minimal-example">A minimal example<a class="anchor-link" href="#A-minimal-example">&#182;</a></h2><p>Consider a minimal example, a single convolutional layer that outputs an array of the same shape as its input with kernel size 3, stride 1, padding 1. Our input is a tiny 3x3 grayscale image with a single channel. Assume that the objective is to perform the identity mapping.</p>
+<p>With a residual shortcut in place the layer's objective is to output a matrix of zeros irrespective of input. If every weight in the kernel is zero, then every input will be multiplied by zero and so the output must be zero in every position.</p>
+<p><img src="./assets/ZeroConv.jpg" alt="Figure 3."></p>
+<ul>
+<li>Figure 3. Optimal parameters for a 3x3, stride 1 convolution that maps any input to zero.</li>
+</ul>
+<p>Next let's consider the weights needed to perform an identity mapping. In this case the only thing we change is to set the central kernel weight to <code>1.0</code>. Intuitively the kernel selects the central pixel at each position and ignores all others.</p>
+<p><img src="./assets/IdentityConv.jpg" alt="Figure 4."></p>
+<ul>
+<li>Figure 4. Optimal parameters for a 3x3, stride 1 convolution that maps any input to the unaltered input.</li>
+</ul>
+<p>If He's hypothesis is correct we expect that learning the identity objective should be harder than learning the zero objective. It's still not obvious that this is the case but it turns out we can run a very minimal experiment to see for ourselves.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Experiment">Experiment<a class="anchor-link" href="#Experiment">&#182;</a></h2><p>To test this we'll create the exact same minimal model illustrated in figures 3 &amp; 4, a single convolutional layer with a 3x3 kernel, stride 1, and padding 1. We add a ReLU activation function and initialise the 9 learn-able parameters with Kaiming He's normal initilisation method. Here's our minimal model:</p>
+
 </div>
 </div>
 </div>
@@ -107,7 +144,8 @@
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import dependencies</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -122,170 +160,6 @@
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">&#182;</a></h2><p>He et al. start from the observation that state-of-the-art 20-layer convolutional models out performed 56-layer models on image classification tasks at that time (Fig. 2).</p>
-<p><img src="./assets/fig1.png" alt="Fig. 2"></p>
-<ul>
-<li>Figure 2. "Training error (left) and test error (right) on CIFAR-10 with 20-layer and 56-layer “plain” networks. The deeper network has higher training error, and thus test error. Similar phenomena on ImageNet is presented in Fig. 4." (from original paper)</li>
-</ul>
-<p>This might be surprising. Why doesn't the 56-layer model perform at least as well as the 20-layer model? We might expect that the first 20-layers of the 56-layer model could learn identical weights to the 20-layer model, then the remaining layers just need to output their input. In linear algebra the function that outputs its input is the identity function.</p>
-<p>He et al. hypothesised that latter layers in the 56-layer model have a detrimental effect on performance because convolutional layers struggle to learn the identity function. So how might we make it easier for convolutional layers to learn the identity function? Or put another way, how might we make it easier for convolutional layers to output their input?</p>
-<p>The ResNet approach is simple, provide a shortcut connection from the input of a layer to its output where the input is added element-wise to the output matrix. The example illustrated in Fig 1. provides a shortcut across two layers. Without a shortcut connection these layers must learn a function that maps the input to the desired output directly.</p>
-$$z = f(x) $$<p></p>
-<ul>
-<li>Equation 1.</li>
-</ul>
-<p>Where $x$ is the input, $f(x)$ is some function that the layers learn, and $z$ is the output returned by that function.</p>
-<p>With a shortcut connection the layers learn the difference, or <strong>the residual</strong>, between input and output.</p>
-$$z = x + f(x) $$<p></p>
-<ul>
-<li>Equation 2.</li>
-</ul>
-<p>A simple change but this now means that if the optimal solution is to model the identity function then the layer learns to output a zero matrix for all inputs e.g. $f(x) = 0$. The assumption being that it is easier for a convolutional layer to learn $f(x)$ that returns zero, than it is to learn $f(x)$ that returns $x$. In the authors' words:</p>
-<blockquote><p>"We hypothesize that it is easier to optimize the residual mapping than to optimize the original, unreferenced mapping. To the extreme, if an identity mapping were optimal, it would be easier to push the residual to zero than to fit an identity mapping by a stack of nonlinear layers." - He et al. 2015</p>
-</blockquote>
-<p>Whilst working on my own <a href="https://github.com/a-martyn/resnet">implementation of the ResNet paper</a>, I found this assumption surprising. Why would it be any easier for a convolutional layer to learn a function that maps to zero than it is to learn the identity function? Let's take a closer look.</p>
-<h2 id="A-minimal-example">A minimal example<a class="anchor-link" href="#A-minimal-example">&#182;</a></h2><p>Let's consider a minimal example, a single convolutional layer that outputs an array of the same shape as its input with kernel size 3, stride 1, padding 1. Our input is a tiny 3x3 grayscale image with a single channel. Let's assume that the objective is to perform the identity mapping.</p>
-<p>With a residual shortcut in place the layer's objective is to output a matrix of zeros irrespective of input because input is added to the layers output output via the shortcut (see equation 2.).</p>
-<p><img src="./assets/ZeroConv.jpg" alt="Figure 3."></p>
-<ul>
-<li>Figure 3. Optimal parameters for a 3x3, stride 1 convolution that maps any input to zero.</li>
-</ul>
-<p>To achieve this we would like kernel weights that return an output of zero regardless of input as the kernel is convolved left-to-right, top-to-bottom across the input. In Figure 3. imagine the blue outline at every possible position. If every weight in the kernel is zero, then every input will be multiplied by zero and so the output must be zero in every position. So the optimal kernel will be an array of zeros. Here's the equivalent in code:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Manually set the weights, there&#39;s only one 3x3 kernel in this model</span>
-<span class="n">weights</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[[[</span><span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]]]],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Generate random input x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
-<span class="c1"># Forward pass</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">weights</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Input:</span><span class="se">\n</span><span class="s1"> </span><span class="si">{x}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Output:</span><span class="se">\n</span><span class="s1"> </span><span class="si">{z}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Input:
- tensor([[[[0.7315, 0.1468, 0.2154],
-          [0.2992, 0.8183, 0.1114],
-          [0.6382, 0.7877, 0.4554]]]])
-Output:
- tensor([[[[0., 0., 0.],
-          [0., 0., 0.],
-          [0., 0., 0.]]]], grad_fn=&lt;ThnnConv2DBackward&gt;)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As expected the output is zero, run the above code block multiple times to check this is the case for other inputs. Next let's consider the weights needed to perform an identity mapping In this case the only thing we change is to set the central kernel weight to <code>1.0</code>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="./assets/IdentityConv.jpg" alt="Figure 4."></p>
-<ul>
-<li>Figure 4. Optimal parameters for a 3x3, stride 1 convolution that maps any input to the unaltered input.</li>
-</ul>
-<p>Without a shortcut connection the layers' objective becomes to output its input (see equation 1.). Intuitively the kernel selects the central pixel at each position and ignores all others. Here's a code example:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Set weights to zero to ouput zero</span>
-<span class="n">weights</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[[[</span><span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span>  <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
-                          <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span>  <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]]]],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># Generate random input x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
-<span class="c1"># Forward pass</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">conv2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">weights</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Input:</span><span class="se">\n</span><span class="s1"> </span><span class="si">{x}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Output:</span><span class="se">\n</span><span class="s1"> </span><span class="si">{z}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Input:
- tensor([[[[0.8361, 0.3069, 0.6524],
-          [0.2145, 0.2745, 0.6489],
-          [0.1664, 0.5390, 0.9452]]]])
-Output:
- tensor([[[[0.8361, 0.3069, 0.6524],
-          [0.2145, 0.2745, 0.6489],
-          [0.1664, 0.5390, 0.9452]]]], grad_fn=&lt;ThnnConv2DBackward&gt;)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By setting the central kernel weight to <code>1.0</code>, the layer now performs an identity mapping - the output is the same as the input.</p>
-<p>If He's hypothesis is correct we expect that learning the identity objective should be harder than learning the zero objective. It's still not obvious that this is the case but it turns out we can run a very minimal experiment to see for ourselves.</p>
-<h2 id="Experiment">Experiment<a class="anchor-link" href="#Experiment">&#182;</a></h2><p>Following from He's hypothesis that a convolutional layer with a residual shortcut can more easily learn the identity function, it follows that a convolutional layer can learn to map any input zero faster than it can learn the identity function directly.</p>
-<p>To test this we'll create the exact same minimal model illustrated in figures 3 &amp; 4, a single convolutional layer with a 3x3 kernel, stride 1, and padding 1. We add a ReLU activation function and initialise the 9 learn-able parameters with Kaiming He's normal initilisation method. Here's our minimal model:</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -465,28 +339,21 @@ $$l = \frac{\sum_{i=1}^{n}|x_i - y_i|}{n}$$<ul>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the zero setting the model reduces loss to below 0.01 (dashed line) in 3.5 epochs, in the identity setting the model takes 10 epochs to achieve this. The wider confidence interval indicates greater variance in the identity setting.</p>
-<p>Even in this very minimal setting, there is evidence to support He's hypothesis. The model learns a mapping to zero almost three times faster than it learns the identity function.</p>
-<h2 id="A-less-minimal-experiment">A less minimal experiment<a class="anchor-link" href="#A-less-minimal-experiment">&#182;</a></h2><p>At this point you might not be convinced that theses observations from the extreme minimal setting extrapolate to more complex settings with larger inputs and more than one layer with more parameters. To check this I ran a similar experiment but with a full 2-layer ResNet block and 512px images as input. More detail on this experiment is available <a href="https://www.alanmartyn.com/content/resnet-membrane-demo.html">here</a>, and the results are below.</p>
+<p>In the zero setting the model reduces the L1 loss to below 0.01 (dashed line) in 3.5 epochs, in the identity setting the model takes 10 epochs to achieve this. The wider confidence interval indicates greater variance in the identity setting.</p>
+<p>Even in this minimal setting, there is evidence to support He's hypothesis. The model learns a mapping to zero almost three times faster than it learns the identity function.</p>
+<h2 id="A-less-minimal-experiment">A less minimal experiment<a class="anchor-link" href="#A-less-minimal-experiment">&#182;</a></h2><p>I also ran a similar experiment but with a full 2-layer ResNet block and 512px images as input. More detail on this experiment is available <a href="https://www.alanmartyn.com/content/resnet-membrane-demo.html">here</a>, and the results are below.</p>
 <p><img src="./assets/membrane_results.png" alt="Membrane results"></p>
 <p>The model with a residual shortcut clearly outperforms the no-shortcut model in this setting too.</p>
-<h2 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">&#182;</a></h2><p>Why do convolutional networks learn the zero mapping more easily than the identity mapping? If we can answer this question then we can understand <em>why</em> residual shortcuts improve performance. In the minimal setting there's only two practical differences I can think of:</p>
+<h2 id="Discussion">Discussion<a class="anchor-link" href="#Discussion">&#182;</a></h2><p>Why do convolutional networks learn the zero mapping more easily than the identity mapping? In the minimal setting there's only two practical differences I can think of:</p>
 <ol>
-<li><strong>Weight configuration:</strong> The optimal weights differ as discussed, in the zero setting all zero and in the identity setting the central weight is one and the rest zero.</li>
+<li><strong>Weight configuration:</strong> In the zero setting the optimal weights are all zero and in the identity setting the central weight should be one and the rest zero.</li>
 <li><strong>Target variance:</strong> In the identity setting the target is the input which differs at each training step. In the zero setting the target is identical at every step, it is always a zero matrix.</li>
 </ol>
-<p>Further investigation is needed. Intuitively, I can't see how the difference in optimal weight could be significant. My guess would be that the target variance is the cause. In the identity setting there is variance between targets at each step, and for some samples there will exist solutions that work for that specific case but that don't generalise. For example a kernel with the bottom-right value set to <code>1.0</code> performs quite well in this particular case with only one pixel in error (highlighted red).</p>
-<p><img src="./assets/NonGeneralB.jpg" alt=""></p>
-<ul>
-<li>Figure 5. Example of suboptimal kernel weights for identity mapping.</li>
-</ul>
-<p>Such cases could introduce variance when calculating backpropagation gradients which seems likely to impede convergence. Conversely in the zero setting there is no variance between targets, the target is always a zero matrix.</p>
-<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>He et al. hypothesized that residual shortcuts help convolutional layers learn identity mappings and showed that they can improve performance of convolutional networks over.</p>
-<p>When the optimal output of a layer is close to the identity function then the residual shortcut ensures that the optimal layer activations are close to zero with reduced variance. We ran a minimal experiment to show that convolutional layers converge faster to a zero mapping with no variance in target activations, than to an identity mapping with high variance.</p>
-<p>Practically speaking, this suggests that if you can reduce the variance in the target activations of convolutional layers within your model then you can speed up convergence and perhaps initiate convergence in layers that otherwise would fail to do so. In other words, how can we encourage a models' activations to be more consistent across training samples?</p>
-<p>Next we might ask: Do these insights apply to nonlinear layers other than convolutions? In settings with other objectives and architectures is the residual the best assumption as to what layers are modeling? If not, do other shortcuts or different techniques for reducing activation variance work better?</p>
-<p>In the next post I'll discuss the U-net, another breakthrough architecture that uses the shortcut technique. If you want to explore the full ResNet architecture then please take a look at my <a href="https://github.com/a-martyn/resnet">PyTorch implementation</a>.</p>
-<p>Thanks for reading. Any feedback, thoughts or corrections most welcome.</p>
+<p>Further investigation is needed. My guess would be that the target variance is the cause.</p>
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>When the optimal output of a layer is close to the identity function then the residual shortcut ensures that the optimal layer activations are close to zero with reduced variance. We ran a minimal experiment to show that convolutional layers converge faster to a zero mapping (with no variance in target activations), than to an identity mapping (with high variance in target activations).</p>
+<p>This suggests that if you can reduce the variance in the target activations of convolutional layers within your model then you can speed up convergence.</p>
+<p>Does this apply to nonlinear layers other than convolutions? In settings with other objectives and architectures is the residual the best assumption as to what layers are modeling? If not, do other shortcuts or different techniques for reducing activation variance work better?</p>
+<p>In the next post I'll discuss the U-net, another architecture that uses the shortcut technique.</p>
 
 </div>
 </div>
