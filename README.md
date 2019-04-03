@@ -19,9 +19,8 @@ To articulate my work effectively requires a means to:
 1. **Render:** to static site `python render.py`
 1. **Publish:** `git commit` and `git push` to publish via CircleCI continuous integration
 
-#### Options
 
-Optional configuration includes:
+## Optional configuration
 
 - If your post requires linked assets add symlink to `./input/content/assets/`, remember to use full path e.g. `ln -s full/path/to/input/content/assets/ full/path/to/input/content/my-post/assets`
 - Set `"index": true` to display on homepage index, or `false` to publish page without link from index

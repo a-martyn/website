@@ -39,15 +39,15 @@ class Tests(unittest.TestCase):
         self.assertEqual(result[1]['out_pth'], 
                          'https://github.com/a-martyn/pix2pix/')
 
-    # def test_assets_validate(self):
-    #     assets = ren.Assets(index, ['md', 'ipynb'], '')
-    #     # Happy path
-    #     assets.assets = [('a', 'x/y/a'), ('b', 'z/x/b')]
-    #     assets.validate()
-    #     # Failure mode: duplicated filename
-    #     assets.assets = [('a', 'x/y/a'), ('a', 'z/x/b')]
-    #     with self.assertRaises(NameError):
-    #         assets.validate()
+    def test_assets_validate(self):
+        assets = ren.Assets(index, ['md', 'ipynb'], '')
+        # Happy path
+        assets.assets = [('a', 'x/y/a'), ('b', 'z/x/b')]
+        assets.validate()
+        # Failure mode: duplicated filename
+        assets.assets = [('a', 'x/y/a'), ('a', 'z/x/b')]
+        with self.assertRaises(NameError):
+            assets.validate()
 
 suite = unittest.TestLoader().loadTestsFromTestCase(Tests)
 unittest.TextTestRunner(verbosity=2).run(suite)

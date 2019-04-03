@@ -1,26 +1,23 @@
-
-from distutils.dir_util import copy_tree
-
 from utils import *
+from config import *
 
 # Globals
 # -----------------------------------------
-in_dir = './input/content'
-out_dir = './output'
-content_dirname = 'content'
-content_dir = f'{out_dir}/{content_dirname}'
 
-assets_in_pth = f'{in_dir}/assets'
-assets_out_pth = f'{content_dir}/assets'
-formats_with_assets = ['md', 'ipynb']
-md_css = './css/markdown.css'
-index_json = 'index.json'
-index_template    = f'./input/templates/index.html.jinja2'
-navbar_template   = f'./input/templates/navbar.html.jinja2'
-notebook_template = f'./input/templates/notebook.html.jinja2'
-markdown_template = f'./input/templates/markdown.html.jinja2'
-comments_template = f'./input/templates/comments.html.jinja2'
-host = 'alanmartyn.com'
+# Output content config
+out_dir = './output'                           # path to output dir
+content_dirname = 'content'                    # name of content dir in output dir
+content_dir = f'{out_dir}/{content_dirname}'   # path to output content dir
+assets_out_pth = f'{content_dir}/assets'       # path to output assets
+assets_out_rel_pth = f'./{content_dirname}/assets' 
+formats_with_assets = ['md', 'ipynb']          # input formats with linked assets
+
+# HTML templates                 
+index_template    = f'./templates/index.html.jinja2'
+navbar_template   = f'./templates/navbar.html.jinja2'
+notebook_template = f'./templates/notebook.html.jinja2'
+markdown_template = f'./templates/markdown.html.jinja2'
+comments_template = f'./templates/comments.html.jinja2'
 
 # Load html templates
 # -----------------------------------------
@@ -42,17 +39,18 @@ if __name__ == "__main__":
     index = add_urls(index)
 
     # Render notebooks, add html files to index
-    index = notebook2html(index, templates, host, content_dir, content_dirname)
+    index = notebook2html(index, in_dir, templates, host, content_dir, content_dirname)
 
     # Render markdown, add html files to index
-    index = markdown2html(index, templates, host, content_dir, content_dirname)
+    index = markdown2html(index, in_dir, templates, host, content_dir, content_dirname)
 
     # Render index
-    index2html(index, templates, out_dir)
+    index2html(index, templates, out_dir, assets_out_rel_pth)
 
     # migrate assets
-    migrate_assets(assets_in_pth, assets_out_pth)
-    # # Compile assets, flag if duplicate
-    # assets = Assets(index, formats_with_assets, index_assets)
-    # assets.migrate(assets_out_pth)
+    # migrate_assets(assets_in_pth, assets_out_pth)
+
+    # Compile assets, flag if duplicate
+    assets = Assets(index, in_dir, formats_with_assets, index_assets)
+    assets.migrate(assets_out_pth)
 

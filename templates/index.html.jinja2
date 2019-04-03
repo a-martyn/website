@@ -29,10 +29,10 @@
       {% for item in index %}
         <div class="col-lg-4 col-sm-6 mb-4">
           <div class="card h-100">
-            <a href="{{ item.out_pth }}"><img class="card-img-top" src="{{ item.image }}" alt=""></a>
+            <a href="{{ item.out_pth }}"><img class="card-img-top" src="{{ item.image_out_pth }}" alt=""></a>
             <div class="card-body d-flex flex-column">
               <h4 class="card-title">
-              <a href="{{ item.out_pth }}">{{ item.title }}</a>
+              <a href="{{ item.out_pth }}" class="text-dark">{{ item.title }}</a>
               </h4>
               <p class="card-text">{{ item.blurb }}</p>
               <a href="{{ item.out_pth }}" type="button" class="btn btn-light mt-auto">
