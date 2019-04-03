@@ -74,14 +74,8 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="https://colab.research.google.com/github/a-martyn/website/blob/master/input/how-residual-shortcuts-speed-up-learning/how-residual-shortcuts-speed-up-learning.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The original <a href="https://arxiv.org/abs/1512.03385">ResNet</a> paper by Kaiming He et al. demonstrates the effect of residual shortcuts in large convolutional neural networks with up to 110 layers and 1.7 million parameters. In this notebook we'll explore the residual shortcut in the extreme minimal setting with just one layer and only 9 parameters. Although not quite as cool as winning ImageNet, as ResNet did in 2016, I hope this approach helps to clarify residual shortcuts, what they're good for, and how to use them.</p>
+<p>Recently I worked on a <a href="https://github.com/a-martyn/resnet">PyTorch implementation</a> of the <a href="https://arxiv.org/abs/1512.03385">ResNet</a> paper by Kaiming He et al. The paper demonstrates the effect of residual shortcuts in large convolutional neural networks with up to 110 layers and 1.7 million parameters. In this notebook we'll explore the residual shortcut in the extreme minimal setting with just one layer and only 9 parameters. Although not quite as cool as winning ImageNet, as ResNet did in 2016, I hope this helps to clarify residual shortcuts, what they're good for, and how to use them.</p>
+<p>Note: If you'd like to execute the code then use the "open in colab" button above, no setup required.</p>
 <p>The ResNet architecture enables 110&#8209;layer convolutional networks to outperform 20&#8209;layer networks and in 2016 achieved state-of-the-art in computer vision classification tasks. The core idea is simple, a stack of 2&#8209;3 convolutional layers circumvented by a 'shortcut' connection from input to output. These 'residual blocks' are themselves stacked together to form the ResNet model, and appear often in machine learning literature, Kaggle entries and beyond.</p>
 <p><img src="./assets/resnet_block.jpg" alt="Resnet Block"></p>
 <ul>
@@ -94,8 +88,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Prelims">Prelims<a class="anchor-link" href="#Prelims">&#182;</a></h2><p>Follow the "open in colab" link above to execute the code in this post. No setup required.</p>
-
+<h2 id="Prelims">Prelims<a class="anchor-link" href="#Prelims">&#182;</a></h2>
 </div>
 </div>
 </div>
