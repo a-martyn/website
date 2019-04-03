@@ -2,7 +2,7 @@
     {
         "image": "how-residual-shortcuts-speed-up-learning.jpg",
         "title": "How residual shortcuts speed up learning: a minimal demonstration",
-        "blurb": "The original ResNet paper by Kaiming He et al. demonstrates the effect of residual shortcuts in large convolutional neural networks with up to 110 layers and 1.7 million parameters. In this notebook we'll explore the residual shortcut...",
+        "blurb": "Recently I worked on a PyTorch implementation of the ResNet paper by Kaiming He et al. The paper demonstrates the effect of residual shortcuts in large convolutional neural networks with up to...",
         "tags": ["resnets", "convnets", "pytorch"],
         "in_pth": "how-residual-shortcuts-speed-up-learning/how-residual-shortcuts-speed-up-learning.ipynb",
         "type": "article",
