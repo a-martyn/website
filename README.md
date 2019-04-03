@@ -5,12 +5,12 @@ The source code for my personal website: [www.alanmartyn.com](https://www.alanma
 
 ## Design principles
 
-To articulate my work effectively requires a means to:
-- [x] curate my work in one place
-- [x] publish jupyter notebooks as html
-- [x] publish markdown as html
-- [x] link to a single dir containing all source code for a post
-
+To articulate my work effectively requires a means for people to:
+- [x] view my work in one place
+- [x] view posts written as jupyter notebooks in the browser
+- [x] view posts written markdown as in the browser
+- [x] access source code for a post
+- [ ] execute source code for a post
 
 ## Building the site
 
