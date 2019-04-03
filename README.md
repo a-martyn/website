@@ -10,7 +10,7 @@ To articulate my work effectively requires a means for people to:
 - [x] view posts written as jupyter notebooks in the browser
 - [x] view posts written markdown as in the browser
 - [x] access source code for a post
-- [ ] execute source code for a post
+- [x] execute source code for a post
 
 ## Building the site
 
