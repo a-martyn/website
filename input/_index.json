@@ -19,7 +19,7 @@
     {
         "image": "pix2pix.jpg",
         "title": "Pix2Pix: a Tensorflow/Keras implementation",
-        "blurb": "Generative adversarial networks, or GANs, are an exciting method for creating data in subjective settings. This implementation of the Pix2Pix paper generates photo-realistic images of building facades from architectural diagrams.",
+        "blurb": "This implementation of the Pix2Pix (GAN) paper generates photo-realistic images of building facades from architectural diagrams.",
         "tags": ["GANs", "generative modelling", "tensorflow", "keras"],
         "in_pth": "https://github.com/a-martyn/pix2pix",
         "type": "github",
@@ -49,7 +49,7 @@
     {
         "image": "sew.jpg",
         "title": "Burst Forecast",
-        "blurb": "Hackathon: A working prototype for South East Water that forecasts the likelihood of pipe bursts by geographic area. In collaboration with a friend we won a special mention from the judges and a small cash prize.",
+        "blurb": "Hackathon: A working prototype for South East Water that forecasts the likelihood of pipe bursts by geographic area.",
         "in_pth": "https://docs.google.com/presentation/d/1kaTD7jr0DhJR7IDXVY0lVQ7-jD_r_qhhgqzK9_5nKRc/edit?usp=sharing",
         "type": "link",
         "format": "url",
@@ -58,7 +58,7 @@
     {
         "image": "isl-python.jpg",
         "title": "An Introduction to Statistical Learning",
-        "blurb": "Numpy implementations of machine learning algorithms described in the classic textbook: An Introduction to Statistical Learning. Includes exercise solutions as python jupyter notebooks.",
+        "blurb": "Numpy implementations of machine learning algorithms described in the classic textbook: An Introduction to Statistical Learning. Includes exercise solutions as jupyter notebooks.",
         "in_pth": "https://github.com/a-martyn/ISL-python",
         "type": "github",
         "format": "url",
@@ -67,9 +67,9 @@
     {
         "image": "m4ml.jpg",
         "title": "Mathematics for Machine Learning",
-        "blurb": "I completed this course by Imperial College covering linear algebra, calculus and probability theory with applications including linear-regression, backpropagation and PCA. Here's my course certificate.",
+        "blurb": "Course by Imperial College covering linear algebra, calculus and probability theory with applications including linear-regression, backpropagation and PCA. Here's my course certificate.",
         "in_pth": "https://www.coursera.org/account/accomplishments/specialization/NPDCRDLHWXCH",
-        "type": "github",
+        "type": "link",
         "format": "url",
         "index": true
     },
