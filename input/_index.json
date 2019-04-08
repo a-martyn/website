@@ -1,7 +1,7 @@
 [
     {
         "image": "how-residual-shortcuts-speed-up-learning.jpg",
-        "title": "How residual shortcuts speed up learning: a minimal demonstration",
+        "title": "How residual shortcuts speed up learning: A minimal demonstration",
         "blurb": "Recently I worked on a PyTorch implementation of the ResNet paper by Kaiming He et al. The paper demonstrates the effect of residual shortcuts in large convolutional neural networks with up to...",
         "tags": ["resnets", "convnets", "pytorch"],
         "in_pth": "how-residual-shortcuts-speed-up-learning/how-residual-shortcuts-speed-up-learning.ipynb",
@@ -18,10 +18,20 @@
     },
     {
         "image": "pix2pix.jpg",
-        "title": "Pix2Pix: a Tensorflow/Keras implementation",
+        "title": "Pix2Pix: A Tensorflow/Keras implementation",
         "blurb": "This implementation of the Pix2Pix (GAN) paper generates photo-realistic images of building facades from architectural diagrams.",
         "tags": ["GANs", "generative modelling", "tensorflow", "keras"],
         "in_pth": "https://github.com/a-martyn/pix2pix",
+        "type": "github",
+        "format": "url",
+        "index": true
+    },
+    {
+        "image": "unets.jpg",
+        "title": "U-Nets: A segment space odyssey",
+        "blurb": "Implementations of three U-Net architectures compared on the ISBI Challenge dataset. Models include: U-Net, TernausNet and Pix2Pix-generator.",
+        "tags": ["unet", "segmentation", "vision", "tensorflow", "keras"],
+        "in_pth": "https://github.com/a-martyn/unet",
         "type": "github",
         "format": "url",
         "index": true
