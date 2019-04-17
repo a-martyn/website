@@ -84,7 +84,7 @@
 <h2 id="My-intuition">My intuition<a class="anchor-link" href="#My-intuition">&#182;</a></h2><p>In the L1 setting: One of the coefficients will go to zero.</p>
 <p>In the L2 setting: One of the coefficients will <em>tend</em> to zero but will retain some small value.</p>
 <p>Because the lasso model, with L1 penalty, is able to totally ignore one of the collinear features it will likely perform slightly better.</p>
-<h2 id="What's-in-the-textbook?">What's in the textbook?<a class="anchor-link" href="#What's-in-the-textbook?">&#182;</a></h2><p>Section 6.4.4 (p243) in <a href="https://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning</a> seems to suggest that, where multiple features are collinear, regularised models will tend choose one. The authors don't make a distinction between lasso and ridge models in context of collinearity.</p>
+<h2 id="What's-in-the-textbook?">What's in the textbook?<a class="anchor-link" href="#What's-in-the-textbook?">&#182;</a></h2><p>Section 6.4.4 (p243) in <a href="https://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning</a> seems to suggest that, where features are collinear, regularised models will tend to choose one and suppress the other. The authors don't make a distinction between lasso and ridge models in context of collinearity.</p>
 <h2 id="Let's-try-it">Let's try it<a class="anchor-link" href="#Let's-try-it">&#182;</a></h2><p>First import dependencies and setup some functions.</p>
 
 </div>
@@ -344,6 +344,7 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The lasso selects <code>x2</code> and gives the causal feature <code>x1</code> a zero coefficient. The ridge puts most weight on <code>x1</code> and gives <code>x2</code> a low coefficient close to zero.</p>
 <p>The ridge achieves a better fit to the data with 0.998 being the proportion of variance explained, compared to 0.962 for the lasso.</p>
+<p>Note: I'm plotting both features,<code>x1</code> and <code>x2</code>, on the same axis here which is slightly misleading as it is really a two-dimensional model. I did try a contour plot but found it was confusing and much more code.</p>
 
 </div>
 </div>
