@@ -85,7 +85,8 @@
 <p>In the L2 setting: One of the coefficients will <em>tend</em> to zero but will retain some small value.</p>
 <p>Because the lasso model, with L1 penalty, is able to totally ignore one of the collinear features it will likely perform slightly better.</p>
 <h2 id="What's-in-the-textbook?">What's in the textbook?<a class="anchor-link" href="#What's-in-the-textbook?">&#182;</a></h2><p>Section 6.4.4 (p243) in <a href="https://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning</a> seems to suggest that, where features are collinear, regularised models will tend to choose one and suppress the other. The authors don't make a distinction between lasso and ridge models in context of collinearity.</p>
-<h2 id="Let's-try-it">Let's try it<a class="anchor-link" href="#Let's-try-it">&#182;</a></h2><p>First import dependencies and setup some functions.</p>
+<h2 id="Let's-try-it">Let's try it<a class="anchor-link" href="#Let's-try-it">&#182;</a></h2><p>Perhaps I should have titled this post "Collinearity" because the original question only concerns two collinear features. It's easier to reason in this simple setting so the experiments here stick to two collinear features, <code>x1</code> and <code>x2</code>.</p>
+<p>First import dependencies and setup some functions.</p>
 
 </div>
 </div>
