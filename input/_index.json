@@ -1,5 +1,14 @@
 [
     {
+        "title": "Multicollinearity",
+        "blurb": "",
+        "tags": ["ML", "ISL"],
+        "in_pth": "multicollinearity/multicollinearity.ipynb",
+        "type": "article",
+        "format": "ipynb",
+        "index": false
+    },
+    {
         "image": "how-residual-shortcuts-speed-up-learning.jpg",
         "title": "How residual shortcuts speed up learning: A minimal demonstration",
         "blurb": "Recently I worked on a PyTorch implementation of the ResNet paper by Kaiming He et al. The paper demonstrates the effect of residual shortcuts in large convolutional neural networks with up to...",
