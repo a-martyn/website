@@ -37,8 +37,6 @@ Helmholtz is designed as a space to encourage musical experimentation. It has se
   <footer class="blockquote-footer"><cite title="Source Title">theartsdesk.com</cite></footer>
 </blockquote>
 
-> “Fascinating watching the various pieces’ textures brought to visual life as the hanging bulbs flickered across the room, and even more intriguing to wonder how particular chords or sounds might be triggering bulbs in unusual patterns, or in lines cutting across the space.” — theartsdesk.com
-
 
 <figure class="figure">
   <img src="./assets/5G5A8002.jpg" class="figure-img img-fluid rounded" alt="Helmholtz tunnel">
@@ -78,11 +76,3 @@ Sam Brookes performs at the Camden install of Helmholtz, accompanied by the Lond
   <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/112045028?loop=0&color=ffffff&byline=0&portrait=0" allowfullscreen></iframe>
 </div>
 
-
-#### Maxwell Quartet performance
-
-A concert by Maxwell Quartet within Helmholtz, Glasgow Science Centre.
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/165272526?loop=0&color=ffffff&byline=0&portrait=0" allowfullscreen></iframe>
-</div>
