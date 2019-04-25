@@ -140,7 +140,6 @@ def markdown2html(index: dict, in_dir: str, templates: dict, host: str,
             navbar = templates['navbar'].render() 
             
             # Render comments section
-            filename = ntpath.basename(in_fp)[:-len('.ipynb')]
             page = {'url': f'{host}/{content_dirname}/{filename}.html',
                     'identifier': filename}
             comments = templates['comments'].render(page=page)

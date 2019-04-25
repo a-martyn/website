@@ -93,6 +93,15 @@
         "index": true
     },
     {
+        "image": "helmholtz.jpg",
+        "title": "Helmholtz",
+        "blurb": "I designed and engineered this light installation for public exhibitions at The Roundhouse and Glasgow Science Centre.",
+        "in_pth": "helmholtz/helmholtz.md",
+        "type": "article",
+        "format": "md",
+        "index": true
+    },
+    {
         "title": "ML Curriculum",
         "in_pth": "ml-curriculum/ml-curriculum.md",
         "type": "article",
