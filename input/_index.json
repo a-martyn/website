@@ -93,12 +93,39 @@
         "index": true
     },
     {
+        "image": "molecules.jpg",
+        "title": "Molecules by Theodore Gray",
+        "blurb": "An interactive chemistry book with NAMD molecular dynamic simulations. Developed in collaboration with Theodore Gray and research scientists at Illinois. 5-star customer reviews, $200k+ revenue.",
+        "in_pth": "https://itunes.apple.com/gb/app/molecules-by-theodore-gray/id923383841?mt=8",
+        "type": "link",
+        "format": "url",
+        "index": true
+    },
+    {
+        "image": "clappingmusic.jpg",
+        "title": "Clapping Music",
+        "blurb": "Simple iOS game that teaches musical rhythm. I prototyped and led development. 200,000+ downloads, 4.7-star customer reviews, acclaimed by New York Times, WIRED, and Business Insider.",
+        "in_pth": "https://itunes.apple.com/gb/app/steve-reichs-clapping-music/id946487211?mt=8",
+        "type": "link",
+        "format": "url",
+        "index": true
+    },
+    {
         "image": "helmholtz.jpg",
         "title": "Helmholtz",
         "blurb": "I designed and engineered this light installation for public exhibitions at The Roundhouse and Glasgow Science Centre.",
         "in_pth": "helmholtz/helmholtz.md",
         "type": "article",
         "format": "md",
+        "index": true
+    },
+    {
+        "image": "incrediblenumbers.jpg",
+        "title": "Incredible Numbers",
+        "blurb": "An interactive exploration of pure maths in collaboration with Professor Ian Stewart. I developed prototypes and led the development team. This video demonstrates the iOS app.",
+        "in_pth": "https://youtu.be/FCz3dJaSgHg",
+        "type": "link",
+        "format": "url",
         "index": true
     },
     {
