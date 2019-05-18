@@ -136,8 +136,15 @@
         "index": false
     },
     {
-        "title": "ML Curriculum",
+        "title": "ML Learning Log",
         "in_pth": "ml-learning-log/ml-learning-log.md",
+        "type": "article",
+        "format": "md",
+        "index": false
+    },
+    {
+        "title": "CV",
+        "in_pth": "cv/cv.md",
         "type": "article",
         "format": "md",
         "index": false
