@@ -1,4 +1,4 @@
 pypandoc==1.4
 ipython==7.4.0
 nbconvert==5.4.1
-Jinja2==2.10.1
+Jinja2==2.11.3
